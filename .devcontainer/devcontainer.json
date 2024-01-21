@@ -1,0 +1,21 @@
+{
+	"name": "Python 3.11",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+	"forwardPorts": [9000],
+	"portsAttributes": {
+		"9000": {
+			"label": "Search web UI port",
+			"onAutoForward": "notify"
+		}
+	},
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "python.terminal.activateEnvInCurrentTerminal": true,
+                "python.defaultInterpreterPath": "./venv/bin/python"
+            }
+        }
+    }
+}
