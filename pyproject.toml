@@ -1,0 +1,42 @@
+[project]
+name = "sommercamp"
+authors = [
+    { name = "Jan Heinrich Reimer", email = "heinrich.reimer@uni-jena.de" },
+]
+description = "Building a search engine from scratch."
+readme = "README.md"
+requires-python = ">=3.11"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.11",
+    "Operating System :: OS Independent",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering",
+]
+dependencies = [
+    "scrapy~=2.11",
+    "python-terrier~=0.10.0",
+    "streamlit~=1.30",
+]
+dynamic = ["version"]
+
+[project.urls]
+"Homepage" = "https://github.com/heinrichreimer/sommercamp"
+"Bug Tracker" = "https://github.com/heinrichreimer/sommercamp/issues"
+
+[build-system]
+requires = ["setuptools>=50", "setuptools_scm[toml]>=6.2", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+include = ["search"]
+namespaces = false
+
+[tool.setuptools.package-data]
+mypkg = ["*.txt", "*.md", "*.rst"]
+
+[tool.setuptools_scm]
