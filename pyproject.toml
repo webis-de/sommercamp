@@ -18,6 +18,7 @@ dependencies = [
     "pandas~=2.2",
     "pip~=23.3",
     "python-terrier~=0.10.0",
+    "resiliparse~=0.14.5",
     "scrapy~=2.11",
     "streamlit~=1.30",
 ]
