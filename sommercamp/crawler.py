@@ -1,4 +1,5 @@
 from typing import Any, Iterator
+from uuid import uuid5, NAMESPACE_URL
 
 from resiliparse.extract.html2text import extract_plain_text
 from scrapy import Spider, Request
@@ -34,6 +35,7 @@ class SchoolSpider(Spider):
     def parse(self, response: Response) -> Iterator[dict[str, Any]]:
 
         yield {
+            "docno": str(uuid5(NAMESPACE_URL, response.url)),
             "url": response.url,
             "title": response.css("title::text").get(),
             "text": extract_plain_text(response.text, main_content=True),
