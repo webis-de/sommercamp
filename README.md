@@ -8,6 +8,10 @@ Building a search engine from scratch.
 
 > TODO: Python dependencies.
 
+```shell
+pip install -e .
+```
+
 ## Usage
 
 > TODO: Usage intro.

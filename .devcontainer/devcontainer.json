@@ -1,21 +1,48 @@
 {
 	"name": "Python 3.11",
-    "build": {
-        "dockerfile": "Dockerfile"
-    },
-	"forwardPorts": [9000],
-	"portsAttributes": {
-		"9000": {
-			"label": "Search web UI port",
-			"onAutoForward": "notify"
-		}
+	"image": "mcr.microsoft.com/devcontainers/python:0-3.11",
+	"onCreateCommand": {
+		"createEnvironment": "python3.11 -m venv --upgrade --upgrade-deps ./venv"
 	},
     "customizations": {
         "vscode": {
             "settings": {
                 "python.terminal.activateEnvInCurrentTerminal": true,
                 "python.defaultInterpreterPath": "./venv/bin/python"
-            }
+            },
+			"extensions": [
+				"ms-python.python",
+				"redhat.vscode-yaml",
+				"DotJoshJohnson.xml",
+				"ms-python.vscode-pylance",
+				"ms-vsliveshare.vsliveshare",
+				"ms-toolsai.jupyter",
+				"wholroyd.jinja",
+				"ms-python.isort",
+				"VisualStudioExptTeam.vscodeintellicode",
+				"ecmel.vscode-html-css",
+				"GitHub.copilot",
+				"GitHub.codespaces",
+				"ms-python.flake8",
+				"tamasfe.even-better-toml",
+				"ms-azuretools.vscode-docker",
+				"ms-vscode-remote.remote-containers",
+				"ms-toolsai.datawrangler"
+			]
         }
-    }
+    },
+	"remoteUser": "root",
+	"hostRequirements": {
+		"cpus": 1,
+		"memory": "4gb",
+		"storage": "32gb",
+		"gpu": false
+	},
+	"forwardPorts": [9000],
+	"portsAttributes": {
+		"9000": {
+			"label": "Search web UI port",
+			"onAutoForward": "notify"
+		}
+	}
 }
