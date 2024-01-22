@@ -4,6 +4,9 @@
 	"onCreateCommand": {
 		"createEnvironment": "python3.11 -m venv --upgrade --upgrade-deps ./venv"
 	},
+	"features": {
+		"ghcr.io/devcontainers/features/java:1": {}
+	},
     "customizations": {
         "vscode": {
             "settings": {
@@ -13,11 +16,8 @@
 			"extensions": [
 				"ms-python.python",
 				"redhat.vscode-yaml",
-				"DotJoshJohnson.xml",
 				"ms-python.vscode-pylance",
 				"ms-vsliveshare.vsliveshare",
-				"ms-toolsai.jupyter",
-				"wholroyd.jinja",
 				"ms-python.isort",
 				"VisualStudioExptTeam.vscodeintellicode",
 				"ecmel.vscode-html-css",

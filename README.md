@@ -20,9 +20,17 @@ pip install -e .
 
 > TODO
 
+```shell
+scrapy runspider sommercamp/crawler.py -O data/documents.jsonl
+```
+
 ### Indexing the crawled websites
 
 > TODO
+
+```shell
+python sommercamp/indexer.py data/documents.jsonl  data/index/
+```
 
 ### Searching the index
 
