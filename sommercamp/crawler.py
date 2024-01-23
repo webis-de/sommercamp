@@ -6,6 +6,7 @@ from scrapy import Spider, Request
 from scrapy.linkextractors.lxmlhtml import \
     LxmlLinkExtractor, IGNORED_EXTENSIONS
 from scrapy.http.response import Response
+from scrapy.http.response.html import HtmlResponse
 
 
 class SchoolSpider(Spider):
@@ -33,6 +34,8 @@ class SchoolSpider(Spider):
     }
 
     def parse(self, response: Response) -> Iterator[dict[str, Any]]:
+        if not isinstance(response, HtmlResponse):
+            return
 
         yield {
             "docno": str(uuid5(NAMESPACE_URL, response.url)),
