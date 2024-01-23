@@ -2,6 +2,11 @@
 
 Building a search engine from scratch.
 
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/heinrichreimer/sommercamp?quickstart=1)
+
+This workshop on how to build a search engine is developed by the [Webis group](https://webis.de/) and designed for students of age 14 and above.
+It is planned for the [Computer Science Summer Camp 2024](https://www.sommercamp.uni-jena.de/2024) at [Friedrich-Schiller-Universität Jena](https://uni-jena.de/). To sign up, please refer to the [summer camp website](https://sommercamp.uni-jena.de/).
+
 <details>
 <summary>Show a screenshot of the search engine.</summary>
 
@@ -11,13 +16,16 @@ Building a search engine from scratch.
 
 ## Installation
 
-> TODO: Dev container.
+The easiest way to start with the workshop is to open this repository in GitHub Codespaces: \
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/heinrichreimer/sommercamp?quickstart=1) \
+This will install all necessary software.
 
-> TODO: Python dependencies.
+Once the editor window has fully loaded (i.e., no progress bars visible; that may take a while), we can start installing the Python software dependencies:> TODO: Python dependencies. To do so, open a terminal (Top menu > Terminal > New terminal) and type:
 
 ```shell
 pip install -e .
 ```
+(Do not forget the dot `.` at the end of the line 😉)
 
 ## Usage
 
