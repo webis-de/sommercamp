@@ -22,7 +22,7 @@ def index(documents_file: str, index_dir: str) -> None:
     print("Indexing...")
     indexer = IterDictIndexer(
         abspath(index_dir),
-        meta={"docno": 36, "url": 256, "title": 256, "text": 4096},
+        meta={"docno": 36, "url": 256, "title": 256, "text": 10_000},
     )
     indexer.index(iterate_documents(documents_file))
 
