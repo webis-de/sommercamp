@@ -1,7 +1,7 @@
 from os.path import abspath, exists
 from sys import argv
 from streamlit import text_input, header, title, subheader, container, \
-    markdown, link_button, divider
+    markdown, link_button, divider, set_page_config
 
 from pyterrier import started, init
 if not started():
@@ -12,6 +12,12 @@ from pyterrier.text import get_text, snippets, sliding, scorer
 
 
 def app(index_dir: str) -> None:
+    set_page_config(
+        page_title="Schul-Suchmaschine",
+        page_icon=":mag:",
+        layout="centered",
+    )
+
     title("Schul-Suchmaschine")
     markdown("Hier kannst du unsere neue Schul-Suchmaschine nutzen:")
 
