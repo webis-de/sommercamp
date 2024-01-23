@@ -38,11 +38,7 @@
 		"storage": "32gb",
 		"gpu": false
 	},
-	"forwardPorts": [9000],
-	"portsAttributes": {
-		"9000": {
-			"label": "Search web UI port",
-			"onAutoForward": "notify"
-		}
-	}
+	"forwardPorts": [
+		8501
+	]
 }
