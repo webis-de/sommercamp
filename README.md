@@ -18,13 +18,21 @@ pip install -e .
 
 ### Scraping a website
 
+https://docs.scrapy.org/en/latest/index.html
+
 > TODO
 
 ```shell
 scrapy runspider sommercamp/crawler.py -O data/documents.jsonl
 ```
 
+```shell
+du -h data/documents.jsonl
+```
+
 ### Indexing the crawled websites
+
+https://pyterrier.readthedocs.io/en/latest/terrier-indexing.html
 
 > TODO
 
@@ -33,6 +41,8 @@ python sommercamp/indexer.py data/documents.jsonl data/index/
 ```
 
 ### Searching the index
+
+https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html
 
 > TODO
 
@@ -47,3 +57,11 @@ python sommercamp/searcher.py data/index/ "Informatik"
 ### Extras
 
 > TODO: Some extras that students can implement when they have the standard template ready.
+
+- Snippets: https://pyterrier.readthedocs.io/en/latest/text.html#query-biased-summarisation-snippets
+- UI components: https://docs.streamlit.io/library/api-reference
+- Page numbering: https://github.com/Socvest/streamlit-pagination
+- Page numbering (alternative): https://medium.com/streamlit/paginating-dataframes-with-streamlit-2da29b080920
+- Auto-complete search box: https://github.com/m-wrzr/streamlit-searchbox
+- Theming: https://docs.streamlit.io/library/advanced-features/theming
+- Emojis: https://share.streamlit.io/streamlit/emoji-shortcodes
