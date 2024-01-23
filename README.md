@@ -2,6 +2,13 @@
 
 Building a search engine from scratch.
 
+<details>
+<summary>Show a screenshot of the search engine.</summary>
+
+![Screenshot of the search engine](documentation/screenshot.png)
+
+</details>
+
 ## Installation
 
 > TODO: Dev container.
