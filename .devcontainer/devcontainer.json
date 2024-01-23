@@ -2,10 +2,22 @@
 	"name": "Python 3.11",
 	"image": "mcr.microsoft.com/devcontainers/python:0-3.11",
 	"onCreateCommand": {
-		"createEnvironment": "python3.11 -m venv --upgrade --upgrade-deps ./venv"
+		"createEnvironment": [
+			"python3.11",
+			"-m",
+			"venv",
+			"--upgrade",
+			"--upgrade-deps",
+			"./venv"
+		]
 	},
-	"postStartCommand": {
-		"installPythonDependencies": "./venv/pip install -e ."
+	"updateContentCommand": {
+		"installPythonDependencies": [
+			"./venv/bin/pip",
+			"install",
+			"-e",
+			"."
+		]
 	},
 	"features": {
 		"ghcr.io/devcontainers/features/java:1": {}
