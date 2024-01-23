@@ -12,9 +12,9 @@ from pyterrier.text import get_text
 def search(index_dir: str, query: str) -> None:
     print("Searching...")
     index = IndexFactory.of(abspath(index_dir))
-    bm25 = BatchRetrieve(index, wmodel="BM25")
-    text = get_text(index, ["url", "title", "text"])
-    pipeline = bm25 >> text
+    searcher = BatchRetrieve(index, wmodel="BM25")
+    text_getter = get_text(index, metadata=["url", "title", "text"])
+    pipeline = searcher >> text_getter
     results = pipeline.search(query)
     print(results.head(10))
 
