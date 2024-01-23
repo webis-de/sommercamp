@@ -26,6 +26,8 @@ https://docs.scrapy.org/en/latest/index.html
 scrapy runspider sommercamp/crawler.py -O data/documents.jsonl
 ```
 
+> TODO: How long does the crawling take?
+
 ```shell
 du -h data/documents.jsonl
 ```
@@ -62,6 +64,7 @@ streamlit run sommercamp/app.py -- data/index/
 
 > TODO: Some extras that students can implement when they have the standard template ready.
 
+- Search query from URL: https://docs.streamlit.io/library/api-reference/utilities/st.query_params
 - Snippets: https://pyterrier.readthedocs.io/en/latest/text.html#query-biased-summarisation-snippets
 - UI components: https://docs.streamlit.io/library/api-reference
 - Page numbering: https://github.com/Socvest/streamlit-pagination
