@@ -87,3 +87,6 @@ streamlit run sommercamp/app.py -- data/index/
 - Auto-complete search box: https://github.com/m-wrzr/streamlit-searchbox
 - Theming: https://docs.streamlit.io/library/advanced-features/theming
 - Emojis: https://share.streamlit.io/streamlit/emoji-shortcodes
+
+## Ideas
+- HiWis fragen zum Helfen
