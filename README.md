@@ -54,6 +54,10 @@ python sommercamp/searcher.py data/index/ "Informatik"
 
 > TODO
 
+```shell
+streamlit run sommercamp/app.py -- data/index/
+```
+
 ### Extras
 
 > TODO: Some extras that students can implement when they have the standard template ready.
