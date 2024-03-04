@@ -16,7 +16,7 @@ classifiers = [
 ]
 dependencies = [
     "pandas~=2.2",
-    "pip~=23.3",
+    "pip~=24.0",
     "python-terrier~=0.10.0",
     "resiliparse~=0.14.5",
     "scrapy~=2.11",
