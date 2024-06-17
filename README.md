@@ -14,6 +14,16 @@ It is planned for the [Computer Science Summer Camp 2024](https://www.sommercamp
 
 </details>
 
+## Use Case
+
+I graduated from the Wilhelm Gymnasium school in 2016. Now I want to find who else graduated with me.
+First, I searched on the school's website, [using their own search bar](https://wilhelm-gym.de/?s=Reimer), but nothing was found.
+So I opened Google and used the `site:` operator to [find only results from my school's website](https://google.de/search?q=site%3Awilhelm-gym.de+Reimer).
+Even Google can't find my classmates...
+But I know that there is a [page with a list of graduates](https://web.archive.org/web/20220118153549/https://archiv.wilhelm-gym.de/berichte/2016/abitur/index.html).
+Let's build a search engine that can find this page.
+(This story does not work anymore, because my school disabled access to the older school reports and it is now password-protected.)
+
 ## Installation
 
 The easiest way to start with the workshop is to open this repository in GitHub Codespaces: \
