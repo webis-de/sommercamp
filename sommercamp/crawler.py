@@ -45,4 +45,16 @@ class SchoolSpider(Spider):
         }
 
         for link in self.link_extractor.extract_links(response):
+            if link.text == "":
+                continue
+            if link.url.lower().endswith(".jpg"):
+                continue
+            if link.url.lower().endswith(".jpeg"):
+                continue
+            if link.url.lower().endswith(".png"):
+                continue
+            if link.url.lower().endswith(".webp"):
+                continue
+            if link.url.lower().endswith(".pdf"):
+                continue
             yield Request(link.url, callback=self.parse)
