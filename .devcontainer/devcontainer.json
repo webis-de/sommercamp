@@ -41,7 +41,7 @@
 	"forwardPorts": [9000],
 	"portsAttributes": {
 		"9000": {
-			"label": "Search web UI port",
+			"label": "Such-Benutzeroberfläche",
 			"onAutoForward": "notify"
 		}
 	}
