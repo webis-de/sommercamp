@@ -1,7 +1,7 @@
 from os.path import abspath, exists
 from sys import argv
 from streamlit import text_input, header, title, subheader, container, \
-    markdown, link_button, divider
+    markdown, link_button, divider, set_page_config
 
 from pyterrier import started, init
 if not started():
@@ -12,11 +12,17 @@ from pyterrier.text import get_text, snippets, sliding, scorer
 
 
 def app(index_dir: str) -> None:
+    set_page_config(
+        page_title="Schul-Suchmaschine",
+        page_icon="🔍",
+        layout="centered",
+    )
+
     title("Schul-Suchmaschine")
     markdown("Hier kannst du unsere neue Schul-Suchmaschine nutzen:")
 
     query = text_input(
-        label=":mag: Suchanfrage",
+        label="🔍 Suchanfrage",
         placeholder="Suche...",
         value="Schule",
     )
@@ -42,10 +48,10 @@ def app(index_dir: str) -> None:
 
     results = pipeline.search(query)
     if len(results) == 0:
-        markdown("Keine Suchergebnisse :slightly_frowning_face:")
+        markdown("Keine Suchergebnisse 🙁")
         return
 
-    markdown(f"{len(results)} Suchergebnisse :slightly_smiling_face:")
+    markdown(f"{len(results)} Suchergebnisse 🙂")
     for _, row in results.iterrows():
         with container(border=True):
             subheader(row["title"])

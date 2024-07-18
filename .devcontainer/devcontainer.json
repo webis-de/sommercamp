@@ -2,7 +2,22 @@
 	"name": "Python 3.11",
 	"image": "mcr.microsoft.com/devcontainers/python:0-3.11",
 	"onCreateCommand": {
-		"createEnvironment": "python3.11 -m venv --upgrade --upgrade-deps ./venv"
+		"createEnvironment": [
+			"python3.11",
+			"-m",
+			"venv",
+			"--upgrade",
+			"--upgrade-deps",
+			"./venv"
+		]
+	},
+	"updateContentCommand": {
+		"installPythonDependencies": [
+			"./venv/bin/pip",
+			"install",
+			"-e",
+			"."
+		]
 	},
 	"features": {
 		"ghcr.io/devcontainers/features/java:1": {}
@@ -38,9 +53,11 @@
 		"storage": "32gb",
 		"gpu": false
 	},
-	"forwardPorts": [9000],
+	"forwardPorts": [
+		8501
+	],
 	"portsAttributes": {
-		"9000": {
+		"8501": {
 			"label": "Such-Benutzeroberfläche",
 			"onAutoForward": "notify"
 		}

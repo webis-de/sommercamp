@@ -1,8 +1,8 @@
 # Hier importieren wir die benötigten Softwarebibliotheken.
 from resiliparse.extract.html2text import extract_plain_text
 from scrapy import Spider, Request
-from scrapy.linkextractors.lxmlhtml import LxmlLinkExtractor, IGNORED_EXTENSIONS
-from scrapy.http.response import Response
+from scrapy.linkextractors.lxmlhtml import LxmlLinkExtractor
+from scrapy.http.response.html import HtmlResponse
 
 
 class SchoolSpider(Spider):
@@ -20,8 +20,6 @@ class SchoolSpider(Spider):
         # Beschränke den Crawler, nur Links zu verfolgen,
         # die auf eine der gelisteten Domains verweisen.
         allow_domains=["wilhelm-gym.de"],
-        # Ignoriere Links mit bestimmten Datei-Endungen.
-        deny_extensions=[*IGNORED_EXTENSIONS, "webp"],
     )
     custom_settings = {
         # Identifiziere den Crawler gegenüber den gecrawlten Seiten.
@@ -39,6 +37,10 @@ class SchoolSpider(Spider):
     }
 
     def parse(self, response):
+        if not isinstance(response, HtmlResponse):
+            # Die Webseite ist keine HTML-Webseite, enthält also keinen Text.
+            return
+        
         # Speichere die Webseite als ein Dokument in unserer Dokumentensammlung.
         yield {
             # Eine eindeutige Identifikations-Nummer für das Dokument.
@@ -55,5 +57,8 @@ class SchoolSpider(Spider):
 
         # Finde alle Links auf der aktuell betrachteten Webseite.
         for link in self.link_extractor.extract_links(response):
+            if link.text == "":
+                # Ignoriere Links ohne Linktext, z.B. bei Bildern.
+                continue
             # Für jeden gefundenen Link, stelle eine Anfrage zum Crawling.
             yield Request(link.url, callback=self.parse)
