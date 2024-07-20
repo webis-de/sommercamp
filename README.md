@@ -409,7 +409,7 @@ if not started():
     init()
 from pyterrier import IndexFactory
 from pyterrier.batchretrieve import BatchRetrieve
-from pyterrier.text import get_text, snippets, sliding, scorer
+from pyterrier.text import get_text
 
 
 # Diese Funktion baut die App für die Suche im gegebenen Index auf.
@@ -538,7 +538,7 @@ Einige weitere Ideen haben wir euch auch noch mitgebracht:
 | Design der Benutzeroberfläche anpassen | leicht | [🔗](https://docs.streamlit.io/library/advanced-features/theming) |
 | Komponenten für die Benutzeroberfläche anpassen | leicht | [🔗](https://docs.streamlit.io/library/api-reference) |
 | Emojis einbinden | leicht | [🔗](https://share.streamlit.io/streamlit/emoji-shortcodes) |
-| Mehr als 10 Ergebnisse mit Seitennummerierung anzeigen | mittel | [🔗](https://github.com/Socvest/streamlit-pagination) oder [🔗](https://medium.com/streamlit/paginating-dataframes-with-streamlit-2da29b080920) |
+| Mehr als 10 Ergebnisse mit Seitennummerierung anzeigen | mittel | [🔗](https://github.com/Socvest/streamlit-pagination) / [🔗](https://medium.com/streamlit/paginating-dataframes-with-streamlit-2da29b080920) |
 | Inhaltsbezogene Kurz-Zusammenfassungen ("Snippets") anzeigen statt gekürztem Volltext | schwierig | [🔗](https://pyterrier.readthedocs.io/en/latest/text.html#query-biased-summarisation-snippets) |
 | Auto-Vervollständigung in der Such-Leiste| schwierig | [🔗](https://github.com/m-wrzr/streamlit-searchbox) |
 

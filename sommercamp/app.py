@@ -10,7 +10,7 @@ if not started():
     init()
 from pyterrier import IndexFactory
 from pyterrier.batchretrieve import BatchRetrieve
-from pyterrier.text import get_text, snippets, sliding, scorer
+from pyterrier.text import get_text
 
 
 # Diese Funktion baut die App für die Suche im gegebenen Index auf.
