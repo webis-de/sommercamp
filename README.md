@@ -194,6 +194,8 @@ Du kannst die Anzahl der Dokumente jederzeit zählen, indem du zuerst ein weiter
 wc -l data/documents.jsonl
 ```
 
+![Ausgabe der Anzahl an Dokumenten](docs/screenshot-num-documents.png)
+
 Die Zahl in der Ausgabe gibt an, wie viele Dokumente du bisher gecrawlt hast.
 
 ## Die heruntergeladenen Webseiten indizieren
@@ -213,8 +215,6 @@ from json import loads
 from shutil import rmtree
 from sys import argv
 from pyterrier import started, init
-
-
 # Die PyTerrier-Bibliothek muss zuerst gestartet werden,
 # um alle seine Bestandteile importieren zu können.
 if not started():
@@ -286,6 +286,9 @@ python sommercamp/indexer.py data/documents.jsonl data/index/
 ```
 
 Wenn du nun einmal in das [Daten-Verzeichnis](data/) guckst, siehst du, dass dort ein neues [Verzeichnis `data/index/`](data/index/) angelegt wurde, in dem sich der Index befindet.
+
+![Dateiverzeichnis des Index](docs/screenshot-index-dir.png)
+
 Leider kannst du in diese Index-Dateien nicht rein gucken, weil es Binärdateien sind (bestehend nur aus Einsen und Nullen).
 Du kannst aber mit diesen Befehlen im Terminal vergleichen, wie viel Speicherplatz der Index im Vergleich zur Dokumentensammlung verbraucht:
 
@@ -294,20 +297,89 @@ du -s -h data/documents.jsonl
 du -s -h data/index/
 ```
 
+![Speicherplatz von Dokumenten-Sammlung und Index](docs/screenshot-file-size-index.png)
+
 Tatsächlich ist der invertierte Index ungefähr so groß wie die gecrawlte Dokumenten-Sammlung.
 
 ## Im Index suchen
 
 Jetzt wird es richtig spannend: Wir wollen in dem gerade erstellten Index nach Suchbegriffen suchen.
 
+Damit die Suche kompatibel mit deinem Index kompatibel ist, verwenden wir wieder die gleiche Software-Bibliothek, [PyTerrier](https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html).
 
-https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html
+Erstelle nun eine neue neue Datei `searcher.py` im Verzeichnis `sommercamp/` und schreibe darin diesen Quellcode:
 
-> TODO
+<details><summary><strong>Quellcode für `sommercamp/indexer.py`</strong></summary>
+
+```python
+# Hier importieren wir die benötigten Softwarebibliotheken.
+from os.path import exists, abspath
+from sys import argv
+from pyterrier import started, init
+# Die PyTerrier-Bibliothek muss zuerst gestartet werden,
+# um alle seine Bestandteile importieren zu können.
+if not started():
+    init()
+from pyterrier import IndexFactory
+from pyterrier.batchretrieve import BatchRetrieve
+from pyterrier.text import get_text
+
+
+# In dieser Funktion öffnen wir den Index und suchen darin 
+# nach der gegebenen Suchanfrage ("query").
+def search(index_dir: str, query: str) -> None:
+    # Öffne den Index
+    index = IndexFactory.of(abspath(index_dir))
+    # Initialisiere den Such-Algorithmus. 
+    # Der bekannteste Suchalgorithmus heißt "BM25".
+    searcher = BatchRetrieve(index, wmodel="BM25")
+    # Initialisiere ein Modul, was den Text 
+    # der gefundenen Dokumente aus dem Index lädt.
+    text_getter = get_text(index, metadata=["url", "title", "text"])
+    # Baue nun die "Pipeline" für die Suche zusammen: 
+    # Zuerst suchen, dann Text abrufen.
+    pipeline = searcher >> text_getter
+    # Führe die Such-Pipeline aus und such nach der Suchanfrage (query).
+    results = pipeline.search(query)
+    return results
+
+
+# Die Hauptfunktion, die beim Ausführen der Datei aufgerufen wird.
+def main():
+    # Lade den Pfad zum Index aus dem ersten Kommandozeilen-Argument.
+    index_dir = argv[1]
+    # Lade die Suchanfrage aus dem zweiten Kommandozeilen-Argument.
+    query = argv[2]
+
+    # Wenn es noch keinen Index gibt, können wir nichts zurückgeben.
+    if not exists(index_dir):
+        exit(1)
+
+    print("Searching...")
+    # Rufe die Such-Funktion von oben auf.
+    results = search(index_dir, query)
+    # Gib die ersten 10 Suchergebnisse im Terminal aus.
+    print(results.head(10))
+
+if __name__ == "__main__":
+    main()
+```
+
+</details>
+
+Noch ist deine Suchmaschine nicht besonders hübsch, aber dennoch voll funktionabel. Du kannst das Python-Programm zum Suchen so im Terminal ausführen:
 
 ```shell
-python sommercamp/searcher.py data/index/ "Informatik"
+python sommercamp/searcher.py data/index/ "Test Informatik"
 ```
+
+Achte dabei darauf, dass du deinen Suchbegriff zwischen Anführungszeichen (`"`) setzt. Nur so kannst du Suchanfragen aus mehreren Wörtern stellen.
+
+![Suchergebnisse im Terminal](docs/screenshot-search-terminal.png)
+
+Im Terminal siehst du jetzt die ersten zehn Suchergebnisse, die der Such-Algorithmus (BM25) zu deiner Suchanfrage gefunden hat.
+(Wenn dir etwas wie `Empty DataFrame` zurückgegeben wird, dann bedeutet dass, dass keine Ergebnisse gefunden werden konnten. Probiere einfach einen anderen Suchbegriff.)
+Noch ist außerdem der Titel und der Text abgeschnitten und auch sonst ist die kleine Suchmaschine noch nicht besonders benutzerfreundlich. Das wollen wir im nächsten Schritt verbessern.
 
 ## Eine Benutzeroberfläche für die Suchmaschine erstellen
 

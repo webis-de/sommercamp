@@ -4,8 +4,6 @@ from json import loads
 from shutil import rmtree
 from sys import argv
 from pyterrier import started, init
-
-
 # Die PyTerrier-Bibliothek muss zuerst gestartet werden,
 # um alle seine Bestandteile importieren zu können.
 if not started():
