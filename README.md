@@ -76,7 +76,7 @@ Als letztes musst du noch die benötigten Software-Bibliotheken installieren:
 pip install -e ./
 ```
 
-</details>
+</details><br>
 
 Das wars, du kannst nun mit dem ["Crawlen"](#eine-webseite-crawlen) starten.
 
@@ -94,7 +94,7 @@ Damit wir nicht alles von Null auf selbst programmieren müssen, nutzen wir die 
 
 Erstelle eine neue neue Datei `crawler.py` im Verzeichnis `sommercamp/` und schreibe darin diesen Quellcode:
 
-<details><summary><strong>Quellcode für `sommercamp/crawler.py`</strong></summary>
+<details><summary><strong>Quellcode für <code>sommercamp/crawler.py</code></strong></summary>
 
 ```python
 # Hier importieren wir die benötigten Softwarebibliotheken.
@@ -163,7 +163,7 @@ class SchoolSpider(Spider):
             yield Request(link.url, callback=self.parse)
 ```
 
-</details>
+</details><br>
 
 Alle Zeilen, die mit einem `#` beginnen, sind Kommentare. Diese Zeilen brauchst du nicht abschreiben, sondern kannst sie weglassen.
 Dabei solltest du einige Dinge beachten:
@@ -206,7 +206,7 @@ Dazu benutzen wir wieder eine Software-Bibliothek, [PyTerrier](https://pyterrier
 
 Erstelle eine neue neue Datei `indexer.py` im Verzeichnis `sommercamp/` und schreibe darin diesen Quellcode:
 
-<details><summary><strong>Quellcode für `sommercamp/indexer.py`</strong></summary>
+<details><summary><strong>Quellcode für <code>sommercamp/indexer.py</code></strong></summary>
 
 ```python
 # Hier importieren wir die benötigten Softwarebibliotheken.
@@ -277,7 +277,7 @@ if __name__ == "__main__":
     main()
 ```
 
-</details>
+</details><br>
 
 Das Python-Programm zum Indexer kannst du dann ausführen, indem du folgendes in dein Terminal eintippst:
 
@@ -309,7 +309,7 @@ Damit die Suche kompatibel mit deinem Index kompatibel ist, verwenden wir wieder
 
 Erstelle nun eine neue neue Datei `searcher.py` im Verzeichnis `sommercamp/` und schreibe darin diesen Quellcode:
 
-<details><summary><strong>Quellcode für `sommercamp/indexer.py`</strong></summary>
+<details><summary><strong>Quellcode für <code>sommercamp/searcher.py</code></strong></summary>
 
 ```python
 # Hier importieren wir die benötigten Softwarebibliotheken.
@@ -370,7 +370,7 @@ if __name__ == "__main__":
     main()
 ```
 
-</details>
+</details><br>
 
 Noch ist deine Suchmaschine nicht besonders hübsch, aber dennoch voll funktionabel. Du kannst das Python-Programm zum Suchen so im Terminal ausführen:
 
@@ -388,25 +388,171 @@ Noch ist außerdem der Titel und der Text abgeschnitten und auch sonst ist die k
 
 ## Eine Benutzeroberfläche für die Suchmaschine erstellen
 
-> TODO
+Um deine Suchmaschine komplett zu machen, fehlt noch eine schöne Benutzeroberfläche.
+Du ahnst es vielleicht schon: Wir erfinden das Rad wieder nicht neu, sondern benutzen wieder eine Software-Bibliothek, [Streamlit](https://docs.streamlit.io/).
+
+Mit Stremlit kannst du ganz einfach eine Web-App aus deinem Python-Programm machen.
+Erstelle dazu eine neue neue Datei `app.py` im Verzeichnis `sommercamp/` und schreibe darin diesen Quellcode:
+
+<details><summary><strong>Quellcode für <code>sommercamp/app.py</code></strong></summary>
+
+```python
+# Hier importieren wir die benötigten Softwarebibliotheken.
+from os.path import abspath, exists
+from sys import argv
+from streamlit import (text_input, header, title, subheader, 
+    container, markdown, link_button, divider, set_page_config)
+from pyterrier import started, init
+# Die PyTerrier-Bibliothek muss zuerst gestartet werden,
+# um alle seine Bestandteile importieren zu können.
+if not started():
+    init()
+from pyterrier import IndexFactory
+from pyterrier.batchretrieve import BatchRetrieve
+from pyterrier.text import get_text, snippets, sliding, scorer
+
+
+# Diese Funktion baut die App für die Suche im gegebenen Index auf.
+def app(index_dir) -> None:
+
+    # Konfiguriere den Titel der Web-App (wird im Browser-Tab angezeigt)
+    set_page_config(
+        page_title="Schul-Suchmaschine",
+        page_icon="🔍",
+        layout="centered",
+    )
+
+    # Gib der App einen Titel und eine Kurzbeschreibung:
+    title("Schul-Suchmaschine")
+    markdown("Hier kannst du unsere neue Schul-Suchmaschine nutzen:")
+
+    # Erstelle ein Text-Feld, mit dem die Suchanfrage (query) 
+    # eingegeben werden kann.
+    query = text_input(
+        label="🔍 Suchanfrage",
+        placeholder="Suche...",
+        value="Schule",
+    )
+
+    # Wenn die Suchanfrage leer ist, dann kannst du nichts suchen.
+    if query == "":
+        markdown("Bitte gib eine Suchanfrage ein.")
+        return
+
+    # Öffne den Index.
+    index = IndexFactory.of(abspath(index_dir))
+    # Initialisiere den Such-Algorithmus. 
+    searcher = BatchRetrieve(
+        index,
+        wmodel="BM25",
+        num_results=10,
+    )
+    # Initialisiere das Modul, zum Abrufen der Texte.
+    text_getter = get_text(index, metadata=["url", "title", "text"])
+    # Baue die Such-Pipeline zusammen.
+    pipeline = searcher >> text_getter
+    # Führe die Such-Pipeline aus und suche nach der Suchanfrage.
+    results = pipeline.search(query)
+
+    # Zeige eine Unter-Überschrift vor den Suchergebnissen an.
+    divider()
+    header("Suchergebnisse")
+
+    # Wenn die Ergebnisliste leer ist, gib einen Hinweis aus.
+    if len(results) == 0:
+        markdown("Keine Suchergebnisse 🙁")
+        return
+
+    # Wenn es Suchergebnisse gibt, dann zeige an, wie viele.
+    markdown(f"{len(results)} Suchergebnisse 🙂")
+
+    # Gib nun der Reihe nach, alle Suchergebnisse aus.
+    for _, row in results.iterrows():
+        # Pro Suchergebnis, erstelle eine Box (container).
+        with container(border=True):
+            # Zeige den Titel der gefundenen Webseite an.
+            subheader(row["title"])
+            # Zeige den Anfang (erste 1000 Zeichen) des Webseiten-Texts an.
+            markdown(row["text"][:1000])
+            # Gib Nutzern eine Schaltfläche, um die Seite zu öffnen.
+            link_button("Seite öffnen", url=row["url"])
+
+
+# Die Hauptfunktion, die beim Ausführen der Datei aufgerufen wird.
+def main():
+    # Lade den Pfad zum Index aus dem ersten Kommandozeilen-Argument.
+    index_dir = argv[1]
+
+    # Wenn es noch keinen Index gibt, kannst du die Suchmaschine nicht starten.
+    if not exists(index_dir):
+        exit(1)
+
+    # Rufe die App-Funktion von oben auf.
+    app(index_dir)
+
+
+if __name__ == "__main__":
+    main()
+```
+
+</details><br>
+
+Deine Web-App startest du mit dem folgenden Befehl im Terminal:
 
 ```shell
 streamlit run sommercamp/app.py -- data/index/
 ```
 
-> TODO: Port veröffentlichen für andere?
+(Das Terminal fragt beim ersten mal nach einer E-Mail. Das kannst du ignorieren und einfach <kbd>Enter</kbd> drücken.)
+
+Et voilà! Es öffnet sich ein neuer Browser-Tab mit deiner selbstgemachten Suchmaschine.
+
+![Web-App Suchmaschine](docs/screenshot-search-web-app.png)
+
+Probier doch direkt mal verschiedene Suchbegriffe aus. Was würdest du verbessern wollen?
+
+> TODO: Wooclap or similar for feature ideas.
+
+Eine Suchmaschine ist natürlich erst richtig sinnvoll, wenn auch andere sie nutzen können, oder?
+
+Gib deine Suchmaschine frei, indem du in dem Pop-up in der Entwicklungsumgebung auf "Make Public" klickst.
+
+![Freigeben der Suchmaschine](docs/screenshot-publish-port.png)
+
+Wechsle dann wieder auf den Tab mit deiner Suchmaschine und kopiere die URL aus der Adresszeile des Browsers.
+
+> TODO: Public Google Doc with URLs to search engines.
+
+Diese URL kannst in [dieses geteilte Dokument](#TODO) kopieren, um sie mit den anderen Teilnehmenden des Sommercamps teilen. Klicke dann auf eine beliebige andere URL zu der Suchmaschine einer/eines anderen Teilnehmenden. Was würdest du hier verbessern wollen?
+
+> TODO: Wooclap or similar for feature ideas.
+
+Da haben wir doch einige Ideen für Verbesserungen und Extras gesammelt.
 
 ## Extras
 
-> TODO: Einige Extras, die Schüler:innen implementieren können, wenn sie die Standardfunktionen fertig haben.
+Einige weitere Ideen haben wir euch auch noch mitgebracht:
 
-- [Kurz-Zusammenfassungen ("Snippets")](https://pyterrier.readthedocs.io/en/latest/text.html#query-biased-summarisation-snippets)
-- [Komponenten für die Benutzeroberfläche](https://docs.streamlit.io/library/api-reference)
-- [Seitennummerierung](https://github.com/Socvest/streamlit-pagination)
-- [Seitennummerierung (Alternative)](https://medium.com/streamlit/paginating-dataframes-with-streamlit-2da29b080920)
-- [Auto-Vervollständigung in der Such-Leiste](https://github.com/m-wrzr/streamlit-searchbox)
-- [Design der Benutzeroberfläche](https://docs.streamlit.io/library/advanced-features/theming)
-- [Emojis](https://share.streamlit.io/streamlit/emoji-shortcodes)
+| Beschreibung | Schwierigkeit | Link |
+|:--|:-:|:-:|
+| Design der Benutzeroberfläche anpassen | leicht | [🔗](https://docs.streamlit.io/library/advanced-features/theming) |
+| Komponenten für die Benutzeroberfläche anpassen | leicht | [🔗](https://docs.streamlit.io/library/api-reference) |
+| Emojis einbinden | leicht | [🔗](https://share.streamlit.io/streamlit/emoji-shortcodes) |
+| Mehr als 10 Ergebnisse mit Seitennummerierung anzeigen | mittel | [🔗](https://github.com/Socvest/streamlit-pagination) oder [🔗](https://medium.com/streamlit/paginating-dataframes-with-streamlit-2da29b080920) |
+| Inhaltsbezogene Kurz-Zusammenfassungen ("Snippets") anzeigen statt gekürztem Volltext | schwierig | [🔗](https://pyterrier.readthedocs.io/en/latest/text.html#query-biased-summarisation-snippets) |
+| Auto-Vervollständigung in der Such-Leiste| schwierig | [🔗](https://github.com/m-wrzr/streamlit-searchbox) |
+
+Nimm dir nun für den zweiten Tag im Sommercamp ein "Extra" vor und versuche dieses in die Suchmaschinen-Web-App mit einzubauen.
+
+> TODO: When should we do the second feedback round?
+
+Nach dem Mittagessen wollen wir noch einmal jeweils eine andere Suchmaschine anschauen. Öffne dazu noch einmal das [geteilte Dokument](#TODO) mit den gesammelten URLs. Klicke wieder auf eine zufällige andere URL zu der Suchmaschine einer/eines anderen Teilnehmenden. Nachdem ihr alle eine Weile an euren Suchmaschinen gearbeitet habt, was würdest du nun verbessern wollen?
+
+> TODO: Wooclap or similar for feature ideas.
+
+## Lernziele
+
+> TODO: Should we ask some knowledge on search or search engines upfront and after the workshop to have some feedback on the main learning effects?
 
 ## Für Lehrende
 
@@ -414,6 +560,8 @@ streamlit run sommercamp/app.py -- data/index/
 
 Dieses Code-Repository richtet sich an Schüler:innen ab Klasse **TODO**. Wir geben uns Mühe, die Inhalte so einfach wie möglich darzustellen, aber natürlich gibt es noch Raum für Verbesserungen. Wenn du selbst Lehrer:in oder Dozent:in bist, kannst du uns helfen, indem du uns entweder [Ideen oder Wünsche schreibst](https://github.com/webis-de/sommercamp/issues/new) oder selbst bei der Entwicklung unterstützt.
 Dazu erläutern wir im Folgenden die Grundstruktur des Code-Repositorys.
+
+> TODO: Prepare branches.
 
 Das Repository ist in verschiedene Branches aufgeteilt, die den Start "von Null auf" und die vier Teilziele des Sommercamp-Workshops darstellen:
 
@@ -431,7 +579,7 @@ Die vier Teilziele finden sich außerdem in der Benennung der Dateien im Python-
 
 Wir bitten dich, bei neuen Beiträgen zu diesem Repository, Bezeichner im Code (Variablennamen, Klassen, etc.) mit englischen Namen zu bennenen, aber erklärende Kommentare in deutsch zu verfassen, damit auch Schüler:innen aus früheren Klassenstufen die Inhalte grob verstehen können.
 
-</details>
+</details><br>
 
 ## Lizenz
 
