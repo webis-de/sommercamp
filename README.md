@@ -89,7 +89,7 @@ Bei Websuchmaschinen sind das eine oder mehrere Webseiten.
 Wir wollen aber klein starten und erstmal eine Webseite deiner Wahl durchsuchbar machen.
 Wie wäre es denn zum Beispiel mit der Webseite deiner Schule, deines Sportvereins?
 
-Wir wollen also den Text und ein paar zusätzliche Daten zu allen Seiten eines Webauftritts abspeichern. Das nennt man "Crawlen" und das Programm, was das tut, heißt "Crawler" oder "Spider". **TODO Folien.**
+Wir wollen also den Text und ein paar zusätzliche Daten zu allen Seiten eines Webauftritts abspeichern. Das nennt man "Crawlen" und das Programm, was das tut, heißt "Crawler" oder "Spider" [`Folien`](https://github.com/webis-de/sommercamp/blob/main/docs/folien-wie-funktioniert-eine-suchmaschine.pdf).
 Damit wir nicht alles von Null auf selbst programmieren müssen, nutzen wir die [Software-Bibliothek "Scrapy"](https://docs.scrapy.org/en/latest/index.html) für das Crawlen.
 
 Erstelle eine neue neue Datei `crawler.py` im Verzeichnis `sommercamp/` und schreibe darin diesen Quellcode:
@@ -200,7 +200,7 @@ Die Zahl in der Ausgabe gibt an, wie viele Dokumente du bisher gecrawlt hast.
 
 ## Die heruntergeladenen Webseiten indizieren
 
-Damit die heruntergeladenen Webseiten durchsuchbar werden, müssen wir daraus einen "invertierten Index" erstellen. **TODO Folien.**
+Damit die heruntergeladenen Webseiten durchsuchbar werden, müssen wir daraus einen "invertierten Index" erstellen [`Folien`](https://github.com/webis-de/sommercamp/blob/main/docs/folien-indexing.pdf).
 
 Dazu benutzen wir wieder eine Software-Bibliothek, [PyTerrier](https://pyterrier.readthedocs.io/en/latest/terrier-indexing.html).
 
@@ -305,9 +305,9 @@ Tatsächlich ist der invertierte Index ungefähr so groß wie die gecrawlte Doku
 
 Jetzt wird es richtig spannend: Wir wollen in dem gerade erstellten Index nach Suchbegriffen suchen.
 
-Damit die Suche kompatibel mit deinem Index kompatibel ist, verwenden wir wieder die gleiche Software-Bibliothek, [PyTerrier](https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html).
+Damit die Suche mit deinem Index kompatibel ist, verwenden wir wieder die gleiche Software-Bibliothek, [PyTerrier](https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html).
 
-Erstelle nun eine neue neue Datei `searcher.py` im Verzeichnis `sommercamp/` und schreibe darin diesen Quellcode:
+Erstelle nun eine neue Datei `searcher.py` im Verzeichnis `sommercamp/` und schreibe darin diesen Quellcode:
 
 <details><summary><strong>Quellcode für <code>sommercamp/searcher.py</code></strong></summary>
 
