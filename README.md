@@ -538,16 +538,16 @@ Diese URL kannst in [dieses geteilte Dokument](https://docs.google.com/document/
 Einige weitere Ideen haben wir euch auch noch mitgebracht:
 
 | Beschreibung | Schwierigkeit | Link |
-|:--|:-:|:-:|
-| Design der Benutzeroberfläche anpassen | leicht | [🔗](https://docs.streamlit.io/library/advanced-features/theming) |
-| Emojis einbinden | leicht | [🔗](https://share.streamlit.io/streamlit/emoji-shortcodes) |
-| Komponenten für die Benutzeroberfläche anpassen | mittel | [🔗](https://docs.streamlit.io/library/api-reference) |
-| Inhaltsbezogene Kurz-Zusammenfassungen ("Snippets") anzeigen statt gekürztem Volltext | mittel bis schwierig | [🔗](https://pyterrier.readthedocs.io/en/latest/text.html#query-biased-summarisation-snippets) |
-| Mehr als 10 Ergebnisse mit Seitennummerierung anzeigen | schwierig | [🔗](https://github.com/Socvest/streamlit-pagination) / [🔗](https://medium.com/streamlit/paginating-dataframes-with-streamlit-2da29b080920) |
-| Auto-Vervollständigung in der Such-Leiste| schwierig | [🔗](https://github.com/m-wrzr/streamlit-searchbox) |
-| RM3
+|:--|:--|:-:|
+| Design der Benutzeroberfläche anpassen | 🟢 leicht | [🔗](https://docs.streamlit.io/library/advanced-features/theming) |
+| Emojis einbinden | 🟢 leicht | [🔗](https://share.streamlit.io/streamlit/emoji-shortcodes) |
+| Komponenten für die Benutzeroberfläche anpassen | 🟡 mittel | [🔗](https://docs.streamlit.io/library/api-reference) |
+| Pseudo-Relevanz-Feedback mit "RM3" | 🟡 mittel | [🔗](https://pyterrier.readthedocs.io/en/latest/rewrite.html#rm3) |
+| Inhaltsbezogene Kurz-Zusammenfassungen ("Snippets") anzeigen statt gekürztem Volltext | 🟠 schwierig | [🔗](https://pyterrier.readthedocs.io/en/latest/text.html#query-biased-summarisation-snippets) |
+| Mehr als 10 Ergebnisse mit Seitennummerierung anzeigen | 🟠 schwierig | [🔗](https://medium.com/streamlit/paginating-dataframes-with-streamlit-2da29b080920) |
+| Auto-Vervollständigung in der Such-Leiste| 🔴 sehr schwierig | [🔗](https://github.com/m-wrzr/streamlit-searchbox) |
 
-Nimm dir nun für den zweiten Tag im Sommercamp ein "Extra" vor und versuche dieses in die Suchmaschinen-Web-App mit einzubauen. Teile deine Ideen [hier](https://menti.com/alsyjzfh7om7).
+Nimm dir nun für den zweiten Tag im Sommercamp 1-2 "Extras" vor (gerne auch deine eigenen Ideen) und versuche dieses in die Suchmaschinen-Web-App mit einzubauen. Teile deine Ideen [hier](https://menti.com/alsyjzfh7om7).
 Nun hast du Zeit an deinen Ideen zu arbeiten. Wir unterstützen dich jederzeit bei Fragen!
 
 Nach dem Mittagessen wollen wir noch einmal jeweils eine andere Suchmaschine anschauen. Öffne dazu noch einmal das [geteilte Dokument](https://docs.google.com/document/d/1oJTQOR2cB9V9Y0CgMN86q-CKb2SM2EFbQjYEfNTMgBA/edit) mit den gesammelten URLs. Klicke wieder auf eine zufällige andere URL zu der Suchmaschine einer/eines anderen Teilnehmenden. Nachdem ihr alle eine Weile an euren Suchmaschinen gearbeitet habt, was würdest du nun immer noch verbessern wollen? Teile deine Ideen [hier](https://menti.com/alsyjzfh7om7).
