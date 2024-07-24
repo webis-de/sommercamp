@@ -558,28 +558,10 @@ Nach dem Mittagessen wollen wir noch einmal jeweils eine andere Suchmaschine ans
 
 <details><summary><strong>Hinweise nur für Lehrende</strong></summary>
 
-Dieses Code-Repository richtet sich an Schüler:innen ab Klasse **TODO**. Wir geben uns Mühe, die Inhalte so einfach wie möglich darzustellen, aber natürlich gibt es noch Raum für Verbesserungen. Wenn du selbst Lehrer:in oder Dozent:in bist, kannst du uns helfen, indem du uns entweder [Ideen oder Wünsche schreibst](https://github.com/webis-de/sommercamp/issues/new) oder selbst bei der Entwicklung unterstützt.
-Dazu erläutern wir im Folgenden die Grundstruktur des Code-Repositorys.
+Für Lehrende, die selbst diesen Workshop ausrichten wollen, oder anderweitig beitragen wollen, haben wir eine [separate Dokumentation](.teachers/) vorbereitet.
+Wenn du Schüler:in bist, brauchst du nur die Dokumentation in der aktuell geöffneten Datei lesen.
 
-> TODO: Prepare branches.
-
-Das Repository ist in verschiedene Branches aufgeteilt, die den Start "von Null auf" und die vier Teilziele des Sommercamp-Workshops darstellen:
-
-- `main`: Start "von Null auf", der normale Ablauf des Workshops.
-- `crawler`: Fertige Crawler-Implementation, falls Schüler:innen beim Programmieren des Crawlers nicht mitkommen.
-- `indexer`: Fertige Indexer-Implementation, falls Schüler:innen beim Programmieren des Indexers nicht mitkommen.
-- `searcher`: Fertige Suche-Implementation, falls Schüler:innen beim Programmieren des Such-Algorithmus' nicht mitkommen.
-- `app`: Fertige App-Implementation der Web-Oberfläche für die Suchmaschine, falls Schüler:innen beim Programmieren der App nicht mitkommen.
-
-Außer des `main` Branches, der den regulären Start des Workshops darstellt, sind die restlichen vier Branches so angelegt, dass Schüler:innen jederzeit durch Mergen auf den jeweils nächsten Implementierungsstand springen können, falls sie sonst den Anschluss an andere Workshop-Teilnehmende verlieren.
-
-(Weitere Branches enthalten Implementierungsideen und Extras, die schnelle Schüler:innen individuell implementieren können: **TODO: Liste**)
-
-Die vier Teilziele finden sich außerdem in der Benennung der Dateien im Python-Modul `sommercamp` wieder.
-
-Wir bitten dich, bei neuen Beiträgen zu diesem Repository, Bezeichner im Code (Variablennamen, Klassen, etc.) mit englischen Namen zu bennenen, aber erklärende Kommentare in deutsch zu verfassen, damit auch Schüler:innen aus früheren Klassenstufen die Inhalte grob verstehen können.
-
-</details><br>
+</details>
 
 ## Lizenz
 
