@@ -16,3 +16,11 @@ gatherUsageStats = false
 hideTopBar = true
 
 # Eigene Einstellungen kannst du unterhalb dieser Zeile einfügen.
+
+[theme]
+base="light"
+primaryColor="DarkRed"
+backgroundColor="OldLace"
+secondaryBackgroundColor="Moccasin"
+textColor="Black"
+font="serif"

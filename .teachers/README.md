@@ -66,6 +66,12 @@ Auch hier kann die Musterlösung leicht mit der aktuellen Lösung der Schülerin
 code --diff .teachers/app_pagination.py sommercamp/app.py
 ```
 
+Die Einzige Außname ist beim Ändern des Designs (Theme). Um dafür die Musterlösung zu vergleichen, nutze folgenden Befehl:
+
+```shell
+code --diff .teachers/config.toml .streamlit/config.toml
+```
+
 ## Beitragen
 
 Wir geben uns Mühe, die Inhalte so einfach wie möglich darzustellen, aber natürlich gibt es noch Raum für Verbesserungen. Wenn du selbst Lehrer:in oder Dozent:in bist, kannst du uns helfen, indem du uns entweder [Ideen oder Wünsche schreibst](https://github.com/webis-de/sommercamp/issues/new) oder selbst bei der Entwicklung unterstützt.
