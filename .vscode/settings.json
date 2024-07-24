@@ -4,6 +4,7 @@
         "no-inline-html": false
     },
     "files.exclude": {
+        ".teachers": true,
         ".github": true,
         ".scrapy": true,
         "**/__pycache__": true,
