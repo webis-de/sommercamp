@@ -35,6 +35,11 @@ In dem Fenster, das sich dann öffnet, hast du zwei Optionen:
 Es öffnet sich ein Browser-Fenster mit der Entwicklungsumgebung.
 Warte bitte eine Weile (bis zu 5 Minuten), bis keine Fortschrittsanzeigen mehr zu sehen sind. Solange werden noch automatisch alle benötigten Software-Bibliotheken installiert.
 
+Während die Entwicklungsumgebung lädt, hör dir nun an, was eine Suchmaschine überhaupt ist.
+Dazu haben wir [Folien](docs/folien-suchmaschine.pdf) vorbereitet, die während des Workshops vorgetragen werden.
+Um bei den Abstimmungen während des Vortrags mitzumachen, klicke bitte [hier](https://menti.com/alsyjzfh7om7).
+
+Nun zurück zur Programmierung...
 Dein Browserfenster sollte nun in etwa so aussehen und eine Liste mit Dateien anzeigen:
 ![Screenshot von GitHub Codespaces](docs/screenshot-codespace.png)
 
@@ -89,7 +94,7 @@ Bei Websuchmaschinen sind das eine oder mehrere Webseiten.
 Wir wollen aber klein starten und erstmal eine Webseite deiner Wahl durchsuchbar machen.
 Wie wäre es denn zum Beispiel mit der Webseite deiner Schule, deines Sportvereins?
 
-Wir wollen also den Text und ein paar zusätzliche Daten zu allen Seiten eines Webauftritts abspeichern. Das nennt man "Crawlen" und das Programm, was das tut, heißt "Crawler" oder "Spider" ([`Folien`](https://github.com/webis-de/sommercamp/blob/main/docs/folien-wie-funktioniert-eine-suchmaschine.pdf)).
+Wir wollen also den Text und ein paar zusätzliche Daten zu allen Seiten eines Webauftritts abspeichern. Das nennt man "Crawlen" und das Programm, was das tut, heißt "Crawler" oder "Spider".
 Damit wir nicht alles von Null auf selbst programmieren müssen, nutzen wir die [Software-Bibliothek "Scrapy"](https://docs.scrapy.org/en/latest/index.html) für das Crawlen.
 
 Erstelle eine neue neue Datei `crawler.py` im Verzeichnis `sommercamp/` und schreibe darin diesen Quellcode:
@@ -200,8 +205,11 @@ Die Zahl in der Ausgabe gibt an, wie viele Dokumente du bisher gecrawlt hast.
 
 ## Die heruntergeladenen Webseiten indizieren
 
-Damit die heruntergeladenen Webseiten durchsuchbar werden, müssen wir daraus einen "invertierten Index" erstellen ([`Folien`](https://github.com/webis-de/sommercamp/blob/main/docs/folien-indexing.pdf)).
+Während du jetzt noch wartest, dass der Crawler deine angegebene Webseite crawlt, hör dir doch gerne ein paar mehr Details zum "Index" an, dem Herzstück einer Suchmaschine.
+Dazu haben wir wieder [Folien](docs/folien-indexierung.pdf) vorbereitet, die während des Workshops vorgetragen werden.
+Um bei den Abstimmungen während des Vortrags mitzumachen, klicke bitte [hier](https://menti.com/alsyjzfh7om7).
 
+Damit die heruntergeladenen Webseiten durchsuchbar werden, müssen wir nun daraus also einen "invertierten Index" erstellen.
 Dazu benutzen wir wieder eine Software-Bibliothek, [PyTerrier](https://pyterrier.readthedocs.io/en/latest/terrier-indexing.html).
 
 Erstelle eine neue neue Datei `indexer.py` im Verzeichnis `sommercamp/` und schreibe darin diesen Quellcode:
@@ -516,9 +524,6 @@ Et voilà! Es öffnet sich ein neuer Browser-Tab mit deiner selbstgemachten Such
 ![Web-App Suchmaschine](docs/screenshot-search-web-app.png)
 
 Probier doch direkt mal verschiedene Suchbegriffe aus. Was würdest du verbessern wollen?
-
-> TODO: Wooclap or similar for feature ideas.
-
 Eine Suchmaschine ist natürlich erst richtig sinnvoll, wenn auch andere sie nutzen können, oder?
 
 Gib deine Suchmaschine frei, indem du in dem Pop-up in der Entwicklungsumgebung auf "Make Public" klickst.
@@ -527,11 +532,7 @@ Gib deine Suchmaschine frei, indem du in dem Pop-up in der Entwicklungsumgebung 
 
 Wechsle dann wieder auf den Tab mit deiner Suchmaschine und kopiere die URL aus der Adresszeile des Browsers.
 
-Diese URL kannst in [dieses geteilte Dokument](https://docs.google.com/document/d/1oJTQOR2cB9V9Y0CgMN86q-CKb2SM2EFbQjYEfNTMgBA/edit) kopieren, um sie mit den anderen Teilnehmenden des Sommercamps teilen. Klicke dann auf eine beliebige andere URL zu der Suchmaschine einer/eines anderen Teilnehmenden. Was würdest du hier verbessern wollen?
-
-> TODO: Wooclap or similar for feature ideas.
-
-Da haben wir doch einige Ideen für Verbesserungen und Extras gesammelt.
+Diese URL kannst in [dieses geteilte Dokument](https://docs.google.com/document/d/1oJTQOR2cB9V9Y0CgMN86q-CKb2SM2EFbQjYEfNTMgBA/edit) kopieren, um sie mit den anderen Teilnehmenden des Sommercamps teilen. Klicke dann auf eine beliebige andere URL zu der Suchmaschine einer/eines anderen Teilnehmenden. Was würdest du hier verbessern wollen? Teile deine Ideen [hier](https://menti.com/alsyjzfh7om7).
 
 ## Extras
 
@@ -545,18 +546,17 @@ Einige weitere Ideen haben wir euch auch noch mitgebracht:
 | Mehr als 10 Ergebnisse mit Seitennummerierung anzeigen | mittel | [🔗](https://github.com/Socvest/streamlit-pagination) / [🔗](https://medium.com/streamlit/paginating-dataframes-with-streamlit-2da29b080920) |
 | Inhaltsbezogene Kurz-Zusammenfassungen ("Snippets") anzeigen statt gekürztem Volltext | schwierig | [🔗](https://pyterrier.readthedocs.io/en/latest/text.html#query-biased-summarisation-snippets) |
 | Auto-Vervollständigung in der Such-Leiste| schwierig | [🔗](https://github.com/m-wrzr/streamlit-searchbox) |
+| RM3
 
-Nimm dir nun für den zweiten Tag im Sommercamp ein "Extra" vor und versuche dieses in die Suchmaschinen-Web-App mit einzubauen.
+Nimm dir nun für den zweiten Tag im Sommercamp ein "Extra" vor und versuche dieses in die Suchmaschinen-Web-App mit einzubauen. Teile deine Ideen [hier](https://menti.com/alsyjzfh7om7).
+Nun hast du Zeit an deinen Ideen zu arbeiten. Wir unterstützen dich jederzeit bei Fragen!
 
-> TODO: When should we do the second feedback round?
+Nach dem Mittagessen wollen wir noch einmal jeweils eine andere Suchmaschine anschauen. Öffne dazu noch einmal das [geteilte Dokument](https://docs.google.com/document/d/1oJTQOR2cB9V9Y0CgMN86q-CKb2SM2EFbQjYEfNTMgBA/edit) mit den gesammelten URLs. Klicke wieder auf eine zufällige andere URL zu der Suchmaschine einer/eines anderen Teilnehmenden. Nachdem ihr alle eine Weile an euren Suchmaschinen gearbeitet habt, was würdest du nun immer noch verbessern wollen? Teile deine Ideen [hier](https://menti.com/alsyjzfh7om7).
 
-Nach dem Mittagessen wollen wir noch einmal jeweils eine andere Suchmaschine anschauen. Öffne dazu noch einmal das [geteilte Dokument](https://docs.google.com/document/d/1oJTQOR2cB9V9Y0CgMN86q-CKb2SM2EFbQjYEfNTMgBA/edit) mit den gesammelten URLs. Klicke wieder auf eine zufällige andere URL zu der Suchmaschine einer/eines anderen Teilnehmenden. Nachdem ihr alle eine Weile an euren Suchmaschinen gearbeitet habt, was würdest du nun verbessern wollen?
+Danke, dass du mitgemacht hast!
+Du kannst deine Suchmaschine jederzeit zuhause wieder starten. Klicke dazu einfach wieder auf:
 
-> TODO: Wooclap or similar for feature ideas.
-
-## Lernziele
-
-> TODO: Should we ask some knowledge on search or search engines upfront and after the workshop to have some feedback on the main learning effects?
+[![In GitHub Codespaces öffnen](https://github.com/codespaces/badge.svg)](https://github.com/codespaces/new/webis-de/sommercamp?quickstart=1)
 
 ## Für Lehrende
 
