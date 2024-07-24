@@ -6,6 +6,17 @@ Dieses Sommercamp-Workshop richtet sich an Schüler:innen ab 14 Jahren. Alle Inh
 
 Für Lehrende, die diesen Workshop durchführen wollen, erläutern wir im Folgenden die [Grundstruktur des Code-Repositorys](#repository-struktur), das [Vorgehen](#workshop-start), wie du deinen Workshop starten kannst und Tricks, um [ad hoc Schüler:innen zu helfen](#ad-hoc-hilfe).
 
+## Voraussetzungen
+
+Dieser Workshop hat nur einige grundlegende Voraussetzungen:
+
+- Schüler:innen ab 14 Jahre
+- Computer (Thin-Clients reichen)
+- Web-Browser (empfohlen: Mozilla Firefox)
+- GitHub-Account (kann z.B. vorab von den Workshop-Organisator:innen erstellt werden)
+
+Durch die Nutzung von [GitHub Codespaces](https://github.com/features/codespaces) sind weder viel Rechenleistung, Speicherplatz noch ein Webserver nötig.
+
 ## Repository-Struktur
 
 Da das Repository darauf ausgelegt ist, dass Schüler:innen es auf GitHub forken, sind alle Dateien im `main`-Branch des Repositorys enthalten.
@@ -21,7 +32,17 @@ Für den Start des Workshops sind diese vier Python-Skripte `crawler.py`, `index
 
 ## Workshop-Start
 
-> TODO
+Die Folgenden Schritte sollten die Schüler:innen durchführen, um ihren Arbeitsplatz für die Workshop-Teilnahme vorzubereiten.
+Der erste Einstiegs-Vortrag kann dann stattfinden, während die Codespaces der Schüler:innen aufgesetzt werden, um die Wartezeit zu überbrücken.
+
+1. Öffne den Web-Browser (z.B. Mozilla Firefox).
+2. Gehe zu [`github.com/login`](https://github.com/login).
+3. Logge dich mit Benutzername und Passwort ein.
+4. Gehe zu [`github.com/webis-de/sommercamp`](https://github.com/webis-de/sommercamp).
+5. Klicke auf <kbd>Fork</kbd>, dann bestätige mit <kbd>Create fork</kbd>.
+6. Klicke auf <kbd>Open in GitHub Codespaces</kbd>, dann auf <kbd>Create codespace</kbd> (oder <kbd>Resume this codespace</kbd>).
+7. Höre dem Einstiegs-Vortrag zu, während der Codespace aufgesetzt wird.
+8. Folge den weiteren Anweisungen aus der [Dokumentation](../README.md).
 
 ## Ad hoc Hilfe
 
@@ -37,6 +58,7 @@ Per klick auf den Rechtspfeil (→) kannst du auch einzelne Teilabschnitte der M
 Für die Extras der App stehen im `.teachers`-Ordner außerdem vorgefertigte Implementationen zur Verfügung:
 
 - [`app_pagination.py`](app_pagination.py): Such-App mit Seitennummerierung.
+- [`app_snippets.py`](app_snippets.py): Such-App mit Kurzzusammenfassungen (Snippets).
 
 Auch hier kann die Musterlösung leicht mit der aktuellen Lösung der Schülerin / des Schülers verglichen werden, z.B.:
 
