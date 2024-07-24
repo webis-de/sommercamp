@@ -540,10 +540,10 @@ Einige weitere Ideen haben wir euch auch noch mitgebracht:
 | Beschreibung | Schwierigkeit | Link |
 |:--|:-:|:-:|
 | Design der Benutzeroberfläche anpassen | leicht | [🔗](https://docs.streamlit.io/library/advanced-features/theming) |
-| Komponenten für die Benutzeroberfläche anpassen | leicht | [🔗](https://docs.streamlit.io/library/api-reference) |
 | Emojis einbinden | leicht | [🔗](https://share.streamlit.io/streamlit/emoji-shortcodes) |
-| Mehr als 10 Ergebnisse mit Seitennummerierung anzeigen | mittel | [🔗](https://github.com/Socvest/streamlit-pagination) / [🔗](https://medium.com/streamlit/paginating-dataframes-with-streamlit-2da29b080920) |
-| Inhaltsbezogene Kurz-Zusammenfassungen ("Snippets") anzeigen statt gekürztem Volltext | schwierig | [🔗](https://pyterrier.readthedocs.io/en/latest/text.html#query-biased-summarisation-snippets) |
+| Komponenten für die Benutzeroberfläche anpassen | mittel | [🔗](https://docs.streamlit.io/library/api-reference) |
+| Inhaltsbezogene Kurz-Zusammenfassungen ("Snippets") anzeigen statt gekürztem Volltext | mittel bis schwierig | [🔗](https://pyterrier.readthedocs.io/en/latest/text.html#query-biased-summarisation-snippets) |
+| Mehr als 10 Ergebnisse mit Seitennummerierung anzeigen | schwierig | [🔗](https://github.com/Socvest/streamlit-pagination) / [🔗](https://medium.com/streamlit/paginating-dataframes-with-streamlit-2da29b080920) |
 | Auto-Vervollständigung in der Such-Leiste| schwierig | [🔗](https://github.com/m-wrzr/streamlit-searchbox) |
 | RM3
 

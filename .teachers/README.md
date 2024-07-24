@@ -59,8 +59,9 @@ Für die Extras der App stehen im `.teachers`-Ordner außerdem vorgefertigte Imp
 
 - [`config.toml`](config.toml): Einstellungen für das App-Design (Theme).
 - [`app_emoji.py`](app_emoji.py): Such-App mit Emojis.
-- [`app_pagination.py`](app_pagination.py): Such-App mit Seitennummerierung.
+- [`app_components.py`](app_components.py): Such-App mit Emojis.
 - [`app_snippets.py`](app_snippets.py): Such-App mit Kurzzusammenfassungen (Snippets).
+- [`app_pagination.py`](app_pagination.py): Such-App mit Seitennummerierung.
 
 Auch hier kann die Musterlösung leicht mit der aktuellen Lösung der Schülerin / des Schülers verglichen werden, z.B.:
 

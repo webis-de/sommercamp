@@ -2,7 +2,8 @@
 from os.path import abspath, exists
 from sys import argv
 from streamlit import (text_input, header, title, subheader, 
-    container, markdown, link_button, divider, set_page_config)
+    expander, markdown, link_button, divider, metric, caption, 
+    image, set_page_config)
 from pyterrier import started, init
 # Die PyTerrier-Bibliothek muss zuerst gestartet werden,
 # um alle seine Bestandteile importieren zu können.
@@ -10,7 +11,7 @@ if not started():
     init()
 from pyterrier import IndexFactory
 from pyterrier.batchretrieve import BatchRetrieve
-from pyterrier.text import get_text, snippets, sliding, scorer
+from pyterrier.text import get_text
 
 
 # Diese Funktion baut die App für die Suche im gegebenen Index auf.
@@ -21,6 +22,9 @@ def app(index_dir) -> None:
         page_title="Schul-Suchmaschine",
         layout="centered",
     )
+
+    # Zeige ein Logo auf der Startseite an.
+    image("docs/webis-logo.png")
 
     # Gib der App einen Titel und eine Kurzbeschreibung:
     title("Schul-Suchmaschine")
@@ -49,19 +53,8 @@ def app(index_dir) -> None:
     )
     # Initialisiere das Modul, zum Abrufen der Texte.
     text_getter = get_text(index, metadata=["url", "title", "text"])
-
-    # Initialisiere das Modul, zum Aufteilen der Texte in 15-Zeichen-Schnipsel.
-    snippets_splitter = sliding(text_attr="text", length=15, prepend_attr=None)
-    # Initialisiere das Modul, zum Ranking der Text-Schnipsel.
-    snippets_scorer = scorer(body_attr="text", wmodel="Tf", takes="docs")
-    # Initialisiere das Modul, zum Zusammenfügen der Text-Schnipsel zu Snippets.
-    snippets_getter = snippets(
-        snippets_splitter >> snippets_scorer,
-        text_attr="text", summary_attr="snippet"
-    )
-
     # Baue die Such-Pipeline zusammen.
-    pipeline = searcher >> text_getter >> snippets_getter
+    pipeline = searcher >> text_getter
     # Führe die Such-Pipeline aus und suche nach der Suchanfrage.
     results = pipeline.search(query)
 
@@ -71,21 +64,29 @@ def app(index_dir) -> None:
 
     # Wenn die Ergebnisliste leer ist, gib einen Hinweis aus.
     if len(results) == 0:
-        markdown("Keine Suchergebnisse.")
         return
 
     # Wenn es Suchergebnisse gibt, dann zeige an, wie viele.
-    markdown(f"{len(results)} Suchergebnisse.")
+    metric("Suchergebnisse", len(results))
 
     # Gib nun der Reihe nach, alle Suchergebnisse aus.
     for _, row in results.iterrows():
         # Pro Suchergebnis, erstelle eine Box (container).
-        with container(border=True):
+        with expander(row["title"]):
+            # Speichere die Ranking-Position und die Dokumenten-Nummer in Variablen.
+            rank = row["rank"]
+            docno = row["docno"]
+            # Zeige die Ranking-Position und die Dokumenten-Nummer an.
+            caption(f"Position: {rank}, Dokument: {docno}")
             # Zeige den Titel der gefundenen Webseite an.
             subheader(row["title"])
-            # Speichere den Snippet-Text in einer Variablen (snippet).
-            text = row["snippet"]
-            # Zeige den Snippet-Text an.
+            # Speichere den Text in einer Variablen (text).
+            text = row["text"]
+            # Schneide den Text nach 500 Zeichen ab.
+            text = text[:500]
+            # Ersetze Zeilenumbrüche durch Leerzeichen.
+            text = text.replace("\n", " ")
+            # Zeige den Dokument-Text an.
             markdown(text)
             # Gib Nutzern eine Schaltfläche, um die Seite zu öffnen.
             link_button("Seite öffnen", url=row["url"])
