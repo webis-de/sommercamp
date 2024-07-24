@@ -89,7 +89,7 @@ Bei Websuchmaschinen sind das eine oder mehrere Webseiten.
 Wir wollen aber klein starten und erstmal eine Webseite deiner Wahl durchsuchbar machen.
 Wie wäre es denn zum Beispiel mit der Webseite deiner Schule, deines Sportvereins?
 
-Wir wollen also den Text und ein paar zusätzliche Daten zu allen Seiten eines Webauftritts abspeichern. Das nennt man "Crawlen" und das Programm, was das tut, heißt "Crawler" oder "Spider". **TODO Folien.**
+Wir wollen also den Text und ein paar zusätzliche Daten zu allen Seiten eines Webauftritts abspeichern. Das nennt man "Crawlen" und das Programm, was das tut, heißt "Crawler" oder "Spider" ([`Folien`](https://github.com/webis-de/sommercamp/blob/main/docs/folien-wie-funktioniert-eine-suchmaschine.pdf)).
 Damit wir nicht alles von Null auf selbst programmieren müssen, nutzen wir die [Software-Bibliothek "Scrapy"](https://docs.scrapy.org/en/latest/index.html) für das Crawlen.
 
 Erstelle eine neue neue Datei `crawler.py` im Verzeichnis `sommercamp/` und schreibe darin diesen Quellcode:
@@ -200,7 +200,7 @@ Die Zahl in der Ausgabe gibt an, wie viele Dokumente du bisher gecrawlt hast.
 
 ## Die heruntergeladenen Webseiten indizieren
 
-Damit die heruntergeladenen Webseiten durchsuchbar werden, müssen wir daraus einen "invertierten Index" erstellen. **TODO Folien.**
+Damit die heruntergeladenen Webseiten durchsuchbar werden, müssen wir daraus einen "invertierten Index" erstellen ([`Folien`](https://github.com/webis-de/sommercamp/blob/main/docs/folien-indexing.pdf)).
 
 Dazu benutzen wir wieder eine Software-Bibliothek, [PyTerrier](https://pyterrier.readthedocs.io/en/latest/terrier-indexing.html).
 
@@ -305,9 +305,9 @@ Tatsächlich ist der invertierte Index ungefähr so groß wie die gecrawlte Doku
 
 Jetzt wird es richtig spannend: Wir wollen in dem gerade erstellten Index nach Suchbegriffen suchen.
 
-Damit die Suche kompatibel mit deinem Index kompatibel ist, verwenden wir wieder die gleiche Software-Bibliothek, [PyTerrier](https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html).
+Damit die Suche mit deinem Index kompatibel ist, verwenden wir wieder die gleiche Software-Bibliothek, [PyTerrier](https://pyterrier.readthedocs.io/en/latest/terrier-retrieval.html).
 
-Erstelle nun eine neue neue Datei `searcher.py` im Verzeichnis `sommercamp/` und schreibe darin diesen Quellcode:
+Erstelle nun eine neue Datei `searcher.py` im Verzeichnis `sommercamp/` und schreibe darin diesen Quellcode:
 
 <details><summary><strong>Quellcode für <code>sommercamp/searcher.py</code></strong></summary>
 
@@ -383,7 +383,7 @@ Achte dabei darauf, dass du deinen Suchbegriff zwischen Anführungszeichen (`"`)
 ![Suchergebnisse im Terminal](docs/screenshot-search-terminal.png)
 
 Im Terminal siehst du jetzt die ersten zehn Suchergebnisse, die der Such-Algorithmus (BM25) zu deiner Suchanfrage gefunden hat.
-(Wenn dir etwas wie `Empty DataFrame` zurückgegeben wird, dann bedeutet dass, dass keine Ergebnisse gefunden werden konnten. Probiere einfach einen anderen Suchbegriff.)
+(Wenn dir etwas wie `Empty DataFrame` zurückgegeben wird, dann bedeutet das, dass keine Ergebnisse gefunden werden konnten. Probiere einfach einen anderen Suchbegriff.)
 Noch ist außerdem der Titel und der Text abgeschnitten und auch sonst ist die kleine Suchmaschine noch nicht besonders benutzerfreundlich. Das wollen wir im nächsten Schritt verbessern.
 
 ## Eine Benutzeroberfläche für die Suchmaschine erstellen
@@ -391,7 +391,7 @@ Noch ist außerdem der Titel und der Text abgeschnitten und auch sonst ist die k
 Um deine Suchmaschine komplett zu machen, fehlt noch eine schöne Benutzeroberfläche.
 Du ahnst es vielleicht schon: Wir erfinden das Rad wieder nicht neu, sondern benutzen wieder eine Software-Bibliothek, [Streamlit](https://docs.streamlit.io/).
 
-Mit Stremlit kannst du ganz einfach eine Web-App aus deinem Python-Programm machen.
+Mit Streamlit kannst du ganz einfach eine Web-App aus deinem Python-Programm machen.
 Erstelle dazu eine neue neue Datei `app.py` im Verzeichnis `sommercamp/` und schreibe darin diesen Quellcode:
 
 <details><summary><strong>Quellcode für <code>sommercamp/app.py</code></strong></summary>
@@ -526,8 +526,6 @@ Gib deine Suchmaschine frei, indem du in dem Pop-up in der Entwicklungsumgebung 
 ![Freigeben der Suchmaschine](docs/screenshot-publish-port.png)
 
 Wechsle dann wieder auf den Tab mit deiner Suchmaschine und kopiere die URL aus der Adresszeile des Browsers.
-
-> TODO: Public Google Doc with URLs to search engines.
 
 Diese URL kannst in [dieses geteilte Dokument](https://docs.google.com/document/d/1oJTQOR2cB9V9Y0CgMN86q-CKb2SM2EFbQjYEfNTMgBA/edit) kopieren, um sie mit den anderen Teilnehmenden des Sommercamps teilen. Klicke dann auf eine beliebige andere URL zu der Suchmaschine einer/eines anderen Teilnehmenden. Was würdest du hier verbessern wollen?
 
