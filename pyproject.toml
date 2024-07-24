@@ -16,6 +16,7 @@ dependencies = [
     "streamlit~=1.30",
     "streamlit-pagination~=0.0.3",
     "streamlit-searchbox~=0.1.6",
+    "watchdog~=4.0",
 ]
 dynamic = ["version"]
 
