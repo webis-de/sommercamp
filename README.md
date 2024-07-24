@@ -11,7 +11,7 @@ Dieser Workshop zum wurde entwickelt von der [Webis-Gruppe](https://webis.de/) f
 <details>
 <summary>Screenshot der Suchmaschine</summary>
 
-![Screenshot der Suchmaschine](documentation/screenshot.png)
+![Screenshot der Suchmaschine](docs/screenshot-own-search.png)
 
 </details>
 
@@ -523,7 +523,7 @@ Wechsle dann wieder auf den Tab mit deiner Suchmaschine und kopiere die URL aus 
 
 > TODO: Public Google Doc with URLs to search engines.
 
-Diese URL kannst in [dieses geteilte Dokument](#TODO) kopieren, um sie mit den anderen Teilnehmenden des Sommercamps teilen. Klicke dann auf eine beliebige andere URL zu der Suchmaschine einer/eines anderen Teilnehmenden. Was würdest du hier verbessern wollen?
+Diese URL kannst in [dieses geteilte Dokument](https://docs.google.com/document/d/1oJTQOR2cB9V9Y0CgMN86q-CKb2SM2EFbQjYEfNTMgBA/edit) kopieren, um sie mit den anderen Teilnehmenden des Sommercamps teilen. Klicke dann auf eine beliebige andere URL zu der Suchmaschine einer/eines anderen Teilnehmenden. Was würdest du hier verbessern wollen?
 
 > TODO: Wooclap or similar for feature ideas.
 
@@ -546,7 +546,7 @@ Nimm dir nun für den zweiten Tag im Sommercamp ein "Extra" vor und versuche die
 
 > TODO: When should we do the second feedback round?
 
-Nach dem Mittagessen wollen wir noch einmal jeweils eine andere Suchmaschine anschauen. Öffne dazu noch einmal das [geteilte Dokument](#TODO) mit den gesammelten URLs. Klicke wieder auf eine zufällige andere URL zu der Suchmaschine einer/eines anderen Teilnehmenden. Nachdem ihr alle eine Weile an euren Suchmaschinen gearbeitet habt, was würdest du nun verbessern wollen?
+Nach dem Mittagessen wollen wir noch einmal jeweils eine andere Suchmaschine anschauen. Öffne dazu noch einmal das [geteilte Dokument](https://docs.google.com/document/d/1oJTQOR2cB9V9Y0CgMN86q-CKb2SM2EFbQjYEfNTMgBA/edit) mit den gesammelten URLs. Klicke wieder auf eine zufällige andere URL zu der Suchmaschine einer/eines anderen Teilnehmenden. Nachdem ihr alle eine Weile an euren Suchmaschinen gearbeitet habt, was würdest du nun verbessern wollen?
 
 > TODO: Wooclap or similar for feature ideas.
 
