@@ -1,0 +1,12 @@
+{
+    "markdownlint.config": {
+        "default": true,
+        "no-inline-html": false
+    },
+    "files.exclude": {
+        ".github": true,
+        ".scrapy": true,
+        "**/__pycache__": true,
+        "**/*.egg-info": true
+    }
+}

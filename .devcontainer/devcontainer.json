@@ -44,7 +44,12 @@
 				"ms-vscode-remote.remote-containers",
 				"ms-toolsai.datawrangler"
 			]
-        }
+        },
+		"codespaces": {
+			"openFiles": [
+				"README.md"
+			]
+		}
     },
 	"remoteUser": "root",
 	"hostRequirements": {

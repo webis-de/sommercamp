@@ -2,6 +2,7 @@
 port = 8501
 headless = false
 runOnSave = true
+folderWatchBlacklist = [".scrapy"]
 
 [client]
 toolbarMode = "minimal"
@@ -10,3 +11,6 @@ toolbarMode = "minimal"
 serverAddress = "localhost"
 serverPort = 8501
 gatherUsageStats = false
+
+[ui]
+hideTopBar = true
