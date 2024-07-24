@@ -7,15 +7,15 @@ description = "Baue dir deine eigene Suchmaschine."
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
+    "faiss-cpu~=1.8",
     "numpy~=1.26",
     "pandas~=2.2",
     "pip~=24.1",
     "python-terrier~=0.10.1",
+    "pyterrier-dr @ git+https://github.com/terrierteam/pyterrier_dr.git@c8946e93b094e4ebc27ca3ce552fa8714f5c1c11",
     "resiliparse~=0.14.5",
     "scrapy~=2.11",
     "streamlit~=1.30",
-    "streamlit-pagination~=0.0.3",
-    "streamlit-searchbox~=0.1.6",
     "watchdog~=4.0",
 ]
 dynamic = ["version"]
