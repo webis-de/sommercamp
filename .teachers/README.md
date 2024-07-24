@@ -57,6 +57,8 @@ Per klick auf den Rechtspfeil (→) kannst du auch einzelne Teilabschnitte der M
 
 Für die Extras der App stehen im `.teachers`-Ordner außerdem vorgefertigte Implementationen zur Verfügung:
 
+- [`config.toml`](config.toml): Einstellungen für das App-Design (Theme).
+- [`app_emoji.py`](app_emoji.py): Such-App mit Emojis.
 - [`app_pagination.py`](app_pagination.py): Such-App mit Seitennummerierung.
 - [`app_snippets.py`](app_snippets.py): Such-App mit Kurzzusammenfassungen (Snippets).
 
