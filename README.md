@@ -472,8 +472,14 @@ def app(index_dir) -> None:
         with container(border=True):
             # Zeige den Titel der gefundenen Webseite an.
             subheader(row["title"])
-            # Zeige den Anfang (erste 1000 Zeichen) des Webseiten-Texts an.
-            markdown(row["text"][:1000])
+            # Speichere den Text in einer Variablen (text).
+            text = row["text"]
+            # Schneide den Text nach 500 Zeichen ab.
+            text = text[:500]
+            # Ersetze Zeilenumbrüche durch Leerzeichen.
+            text = text.replace("\n", " ")
+            # Zeige den Dokument-Text an.
+            markdown(text)
             # Gib Nutzern eine Schaltfläche, um die Seite zu öffnen.
             link_button("Seite öffnen", url=row["url"])
 
