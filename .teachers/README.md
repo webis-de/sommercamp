@@ -60,8 +60,10 @@ Für die Extras der App stehen im `.teachers`-Ordner außerdem vorgefertigte Imp
 - [`config.toml`](config.toml): Einstellungen für das App-Design (Theme).
 - [`app_emoji.py`](app_emoji.py): Such-App mit Emojis.
 - [`app_components.py`](app_components.py): Such-App mit Emojis.
+- [`app_prf.py`](app_prf.py): Such-App mit Relevanz-Feedback (RM3).
 - [`app_snippets.py`](app_snippets.py): Such-App mit Kurzzusammenfassungen (Snippets).
 - [`app_pagination.py`](app_pagination.py): Such-App mit Seitennummerierung.
+- [`app_auto_complete.py`](app_auto_complete.py): Such-App mit Auto-Vervollständigung.
 
 Auch hier kann die Musterlösung leicht mit der aktuellen Lösung der Schülerin / des Schülers verglichen werden, z.B.:
 
@@ -74,6 +76,22 @@ Die Einzige Außname ist beim Ändern des Designs (Theme). Um dafür die Musterl
 ```shell
 code --diff .teachers/config.toml .streamlit/config.toml
 ```
+
+## Häufige Fehler
+
+In den nächsten Abschnitten findest du Lösungsstrategien zu einigen häufig auftretenden Fehlern.
+
+### Java VM doppelt gestartet
+
+**Fehler:** Die Java VM wird doppelt gestartet.
+
+```txt
+ValueError: VM is already running, can't set classpath/options; VM started at  File "/usr/lib/python3.11/threading.py", line 1002, in _bootstrap
+```
+
+Dieser Fehler tritt auf, wenn die Streamlit-App in mehreren Browser-Tabs geöffnet ist, und dann der Quellcode der App verändert wurde.
+
+**Lösung:** Browser-Tab(s) neu laden.
 
 ## Beitragen
 
