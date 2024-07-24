@@ -4,7 +4,7 @@
 
 Dieses Sommercamp-Workshop richtet sich an Schüler:innen ab 14 Jahren. Alle Inhalte sind für einen leichten Start der noch programmier-unerfahrenen Schüler:innen vorbereitet.
 
-Für Lehrende, die diesen Workshop durchführen wollen, erläutern wir im Folgenden die [Grundstruktur des Code-Repositorys](#repository-struktur), das [Vorgehen](#worshhop-start), wie du deinen Workshop starten kannst und Tricks, um [ad hoc Schüler:innen zu helfen](#ad-hoc-hilfe).
+Für Lehrende, die diesen Workshop durchführen wollen, erläutern wir im Folgenden die [Grundstruktur des Code-Repositorys](#repository-struktur), das [Vorgehen](#workshop-start), wie du deinen Workshop starten kannst und Tricks, um [ad hoc Schüler:innen zu helfen](#ad-hoc-hilfe).
 
 ## Repository-Struktur
 
@@ -19,7 +19,7 @@ Im Sommercamp-Workshop arbeiten wir an vier Dateien, die jeweils eins der vier T
 
 Für den Start des Workshops sind diese vier Python-Skripte `crawler.py`, `indexer.py`, `searcher.py` und `app.py` erst einmal leer. Schüler:innen sollen in diesen selbständig den Python-Code schreiben, wie es in der [Haupt-Dokumentation](../README.md) (und live im Workshop) für sie erläutert wird.
 
-## Worshhop-Start
+## Workshop-Start
 
 > TODO
 
