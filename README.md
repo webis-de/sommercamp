@@ -542,10 +542,10 @@ Einige weitere Ideen haben wir euch auch noch mitgebracht:
 | Design der Benutzeroberfläche anpassen | 🟢 leicht | [🔗](https://docs.streamlit.io/library/advanced-features/theming) |
 | Emojis einbinden | 🟢 leicht | [🔗](https://share.streamlit.io/streamlit/emoji-shortcodes) |
 | Komponenten für die Benutzeroberfläche anpassen | 🟡 mittel | [🔗](https://docs.streamlit.io/library/api-reference) |
-| Pseudo-Relevanz-Feedback mit "RM3" | 🟡 mittel | [🔗](https://pyterrier.readthedocs.io/en/latest/rewrite.html#rm3) |
+| Relevanz-Feedback mit "RM3" | 🟡 mittel | [🔗](https://pyterrier.readthedocs.io/en/latest/rewrite.html#rm3) |
+| Neuronales Ranking mit "TAS-B" | 🟠 schwierig | [🔗](https://github.com/terrierteam/pyterrier_dr#readme) |
 | Inhaltsbezogene Kurz-Zusammenfassungen ("Snippets") anzeigen statt gekürztem Volltext | 🟠 schwierig | [🔗](https://pyterrier.readthedocs.io/en/latest/text.html#query-biased-summarisation-snippets) |
-| Mehr als 10 Ergebnisse mit Seitennummerierung anzeigen | 🟠 schwierig | [🔗](https://medium.com/streamlit/paginating-dataframes-with-streamlit-2da29b080920) |
-| Auto-Vervollständigung in der Such-Leiste| 🔴 sehr schwierig | [🔗](https://github.com/m-wrzr/streamlit-searchbox) |
+| Mehr als 10 Ergebnisse mit Seitennummerierung anzeigen | 🔴 schwierig | [🔗](https://medium.com/streamlit/paginating-dataframes-with-streamlit-2da29b080920) |
 
 Nimm dir nun für den zweiten Tag im Sommercamp 1-2 "Extras" vor (gerne auch deine eigenen Ideen) und versuche dieses in die Suchmaschinen-Web-App mit einzubauen. Teile deine Ideen [hier](https://menti.com/alsyjzfh7om7).
 Nun hast du Zeit an deinen Ideen zu arbeiten. Wir unterstützen dich jederzeit bei Fragen!
