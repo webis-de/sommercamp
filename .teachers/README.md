@@ -60,7 +60,7 @@ Für die Extras der App stehen im `.teachers`-Ordner außerdem vorgefertigte Imp
 - [`config.toml`](config.toml): Einstellungen für das App-Design (Theme).
 - [`app_emoji.py`](app_emoji.py): Such-App mit Emojis.
 - [`app_components.py`](app_components.py): Such-App mit Emojis.
-- [`app_prf.py`](app_prf.py): Such-App mit Relevanz-Feedback (RM3).
+- [`app_relevance_feedback.py`](app_relevance_feedback.py): Such-App mit Relevanz-Feedback (RM3).
 - [`app_snippets.py`](app_snippets.py): Such-App mit Kurzzusammenfassungen (Snippets).
 - [`app_pagination.py`](app_pagination.py): Such-App mit Seitennummerierung.
 - [`app_auto_complete.py`](app_auto_complete.py): Such-App mit Auto-Vervollständigung.
