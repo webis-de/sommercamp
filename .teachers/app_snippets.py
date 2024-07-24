@@ -50,7 +50,7 @@ def app(index_dir) -> None:
     # Initialisiere das Modul, zum Abrufen der Texte.
     text_getter = get_text(index, metadata=["url", "title", "text"])
 
-    # Initialisiere das Modul, zum Aufteilen der Texte in 15-Zeichen-Schnipsel.
+    # Initialisiere das Modul, zum Aufteilen der Texte in 15-Wort-Schnipsel.
     snippets_splitter = sliding(text_attr="text", length=15, prepend_attr=None)
     # Initialisiere das Modul, zum Ranking der Text-Schnipsel.
     snippets_scorer = scorer(body_attr="text", wmodel="Tf", takes="docs")
