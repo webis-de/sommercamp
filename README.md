@@ -426,7 +426,6 @@ def app(index_dir) -> None:
     # Konfiguriere den Titel der Web-App (wird im Browser-Tab angezeigt)
     set_page_config(
         page_title="Schul-Suchmaschine",
-        page_icon="🔍",
         layout="centered",
     )
 
@@ -437,7 +436,7 @@ def app(index_dir) -> None:
     # Erstelle ein Text-Feld, mit dem die Suchanfrage (query) 
     # eingegeben werden kann.
     query = text_input(
-        label="🔍 Suchanfrage",
+        label="Suchanfrage",
         placeholder="Suche...",
         value="Schule",
     )
@@ -468,11 +467,11 @@ def app(index_dir) -> None:
 
     # Wenn die Ergebnisliste leer ist, gib einen Hinweis aus.
     if len(results) == 0:
-        markdown("Keine Suchergebnisse 🙁")
+        markdown("Keine Suchergebnisse.")
         return
 
     # Wenn es Suchergebnisse gibt, dann zeige an, wie viele.
-    markdown(f"{len(results)} Suchergebnisse 🙂")
+    markdown(f"{len(results)} Suchergebnisse.")
 
     # Gib nun der Reihe nach, alle Suchergebnisse aus.
     for _, row in results.iterrows():
