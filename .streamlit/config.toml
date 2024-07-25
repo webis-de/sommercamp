@@ -16,3 +16,11 @@ gatherUsageStats = false
 hideTopBar = true
 
 # Eigene Einstellungen kannst du unterhalb dieser Zeile einfügen.
+
+
+[theme]
+primaryColor="#7D2020"
+backgroundColor="#F4F2EE"
+secondaryBackgroundColor="#FAEAEA"
+textColor="#7D2020"
+font="sans serif"
