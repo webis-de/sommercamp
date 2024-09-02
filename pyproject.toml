@@ -16,7 +16,7 @@ dependencies = [
     "resiliparse~=0.14.5",
     "scrapy~=2.11",
     "streamlit~=1.30",
-    "watchdog~=4.0",
+    "watchdog~=5.0",
 ]
 dynamic = ["version"]
 
