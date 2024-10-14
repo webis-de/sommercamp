@@ -1,7 +1,7 @@
 [project]
 name = "sommercamp"
 authors = [
-    { name = "Jan Heinrich Reimer", email = "heinrich.reimer@uni-jena.de" },
+    { name = "Jan Heinrich Merker", email = "heinrich.merker@uni-jena.de" },
 ]
 description = "Baue dir deine eigene Suchmaschine."
 readme = "README.md"
