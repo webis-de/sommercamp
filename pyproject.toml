@@ -11,12 +11,12 @@ dependencies = [
     "numpy~=1.26",
     "pandas~=2.2",
     "pip~=24.1",
-    "python-terrier~=0.10.1",
+    "python-terrier~=0.11.0",
     "pyterrier-dr @ git+https://github.com/terrierteam/pyterrier_dr.git@c8946e93b094e4ebc27ca3ce552fa8714f5c1c11",
     "resiliparse~=0.14.5",
     "scrapy~=2.11",
     "streamlit~=1.30",
-    "watchdog~=4.0",
+    "watchdog~=5.0",
 ]
 dynamic = ["version"]
 
