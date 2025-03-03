@@ -2,14 +2,21 @@
 
 Baue dir deine eigene Suchmaschine.
 
-[![Open in VS Code](https://img.shields.io/badge/Open%20in-VS%20Code-blue?logo=visualstudiocode)](https://vscode.dev/github/webis-de/sommercamp)
-[![Open in Glitch](https://img.shields.io/badge/Open%20in-Glitch-blue?logo=glitch)](https://glitch.com/edit/#!/import/github/webis-de/sommercamp)
 [![In GitHub Codespaces öffnen](https://github.com/codespaces/badge.svg)](https://github.com/codespaces/new/webis-de/sommercamp?quickstart=1)
-[![Edit in Codesandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/webis-de/sommercamp)
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/webis-de/sommercamp)
-[![Open in Repl.it](https://replit.com/badge/github/withastro/astro)](https://replit.com/github/webis-de/sommercamp)
-[![Open in Codeanywhere](https://codeanywhere.com/img/open-in-codeanywhere-btn.svg)](https://app.codeanywhere.com/#https://github.com/webis-de/sommercamp)
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/webis-de/sommercamp)
+
+<details><summary>Alternative Entwickungsumgebungen im Web-Browser</summary>
+
+Mit diesen weiteren Web-Entwicklungsumgebungen kannst du auch arbeiten. Wir können dir aber nicht garantieren, dass der Code damit vollständig funktioniert.
+
+[![In Codeanywhere öffnen](https://codeanywhere.com/img/open-in-codeanywhere-btn.svg)](https://app.codeanywhere.com/#https://github.com/webis-de/sommercamp)
+<!-- [![In VS Code öffnen](https://img.shields.io/badge/Open%20in-VS%20Code-blue?logo=visualstudiocode)](https://vscode.dev/github/webis-de/sommercamp) Does not support executing the code. -->
+<!-- [![In StackBlitz öffnen](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/webis-de/sommercamp) Does not support executing the code. -->
+<!-- [![In Glitch öffnen](https://img.shields.io/badge/Open%20in-Glitch-blue?logo=glitch)](https://glitch.com/edit/#!/import/github/webis-de/sommercamp) Does not support Python 3.11 or Dev Containers. -->
+<!-- [![In Gitpod öffnen](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/webis-de/sommercamp) Does not support Python 3.11 or Dev Containers. -->
+<!-- [![In Repl.it öffnen](https://replit.com/badge/github/withastro/astro)](https://replit.com/github/webis-de/sommercamp) Dependency installation exceeds free disk quota. -->
+<!-- [![In Codesandbox öffnen](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/webis-de/sommercamp) Dependency installation exceeds free disk quota. -->
+
+</details>
 
 Dieser Workshop zum wurde entwickelt von der [Webis-Gruppe](https://webis.de/) für Schüler:innen ab 14 Jahren. Er findet beispielsweise beim [Informatik Sommercamp](https://sommercamp.uni-jena.de/) der [Friedrich-Schiller-Universität Jena](https://uni-jena.de/) statt.
 
