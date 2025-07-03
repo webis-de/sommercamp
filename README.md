@@ -51,7 +51,7 @@ Warte bitte eine Weile (bis zu 5 Minuten), bis keine Fortschrittsanzeigen mehr z
 
 Während die Entwicklungsumgebung lädt, hör dir nun an, was eine Suchmaschine überhaupt ist.
 Dazu haben wir [Folien](docs/folien-suchmaschine.pdf) vorbereitet, die während des Workshops vorgetragen werden.
-Um bei den Abstimmungen während des Vortrags mitzumachen, klicke bitte [hier](https://menti.com/alsyjzfh7om7).
+Um bei den Abstimmungen während des Vortrags mitzumachen, klicke bitte [hier](https://www.menti.com/alsda5u91eq9).
 
 Nun zurück zur Programmierung...
 Dein Browserfenster sollte nun in etwa so aussehen und eine Liste mit Dateien anzeigen:
@@ -221,7 +221,7 @@ Die Zahl in der Ausgabe gibt an, wie viele Dokumente du bisher gecrawlt hast.
 
 Während du jetzt noch wartest, dass der Crawler deine angegebene Webseite crawlt, hör dir doch gerne ein paar mehr Details zum "Index" an, dem Herzstück einer Suchmaschine.
 Dazu haben wir wieder [Folien](docs/folien-indexierung.pdf) vorbereitet, die während des Workshops vorgetragen werden.
-Um bei den Abstimmungen während des Vortrags mitzumachen, klicke bitte [hier](https://menti.com/alsyjzfh7om7).
+Um bei den Abstimmungen während des Vortrags mitzumachen, klicke bitte [hier](https://www.menti.com/alsda5u91eq9).
 
 Damit die heruntergeladenen Webseiten durchsuchbar werden, müssen wir nun daraus also einen "invertierten Index" erstellen.
 Dazu benutzen wir wieder eine Software-Bibliothek, [PyTerrier](https://pyterrier.readthedocs.io/en/latest/terrier-indexing.html).
@@ -545,7 +545,7 @@ Gib deine Suchmaschine frei, indem du in dem Pop-up in der Entwicklungsumgebung 
 
 Wechsle dann wieder auf den Tab mit deiner Suchmaschine und kopiere die URL aus der Adresszeile des Browsers.
 
-Diese URL kannst in [dieses geteilte Dokument](https://docs.google.com/document/d/1oJTQOR2cB9V9Y0CgMN86q-CKb2SM2EFbQjYEfNTMgBA/edit) kopieren, um sie mit den anderen Teilnehmenden des Sommercamps teilen. Klicke dann auf eine beliebige andere URL zu der Suchmaschine einer/eines anderen Teilnehmenden. Was würdest du hier verbessern wollen? Teile deine Ideen [hier](https://menti.com/alsyjzfh7om7).
+Diese URL kannst in [dieses geteilte Dokument](https://docs.google.com/document/d/1oJTQOR2cB9V9Y0CgMN86q-CKb2SM2EFbQjYEfNTMgBA/edit) kopieren, um sie mit den anderen Teilnehmenden des Sommercamps teilen. Klicke dann auf eine beliebige andere URL zu der Suchmaschine einer/eines anderen Teilnehmenden. Was würdest du hier verbessern wollen? Teile deine Ideen [hier](https://www.menti.com/alsda5u91eq9).
 
 ## Extras
 
@@ -564,7 +564,7 @@ Einige weitere Ideen haben wir euch auch noch mitgebracht:
 Nimm dir nun für den zweiten Tag im Sommercamp 1-2 "Extras" vor (gerne auch deine eigenen Ideen) und versuche dieses in die Suchmaschinen-Web-App mit einzubauen. Teile deine Ideen [hier](https://menti.com/alsyjzfh7om7).
 Nun hast du Zeit an deinen Ideen zu arbeiten. Wir unterstützen dich jederzeit bei Fragen!
 
-Nach dem Mittagessen wollen wir noch einmal jeweils eine andere Suchmaschine anschauen. Öffne dazu noch einmal das [geteilte Dokument](https://docs.google.com/document/d/1oJTQOR2cB9V9Y0CgMN86q-CKb2SM2EFbQjYEfNTMgBA/edit) mit den gesammelten URLs. Klicke wieder auf eine zufällige andere URL zu der Suchmaschine einer/eines anderen Teilnehmenden. Nachdem ihr alle eine Weile an euren Suchmaschinen gearbeitet habt, was würdest du nun immer noch verbessern wollen? Teile deine Ideen [hier](https://menti.com/alsyjzfh7om7).
+Nach dem Mittagessen wollen wir noch einmal jeweils eine andere Suchmaschine anschauen. Öffne dazu noch einmal das [geteilte Dokument](https://docs.google.com/document/d/1oJTQOR2cB9V9Y0CgMN86q-CKb2SM2EFbQjYEfNTMgBA/edit) mit den gesammelten URLs. Klicke wieder auf eine zufällige andere URL zu der Suchmaschine einer/eines anderen Teilnehmenden. Nachdem ihr alle eine Weile an euren Suchmaschinen gearbeitet habt, was würdest du nun immer noch verbessern wollen? Teile deine Ideen [hier](https://www.menti.com/alsda5u91eq9).
 
 Danke, dass du mitgemacht hast!
 Du kannst deine Suchmaschine jederzeit zuhause wieder starten. Klicke dazu einfach wieder auf:
