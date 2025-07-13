@@ -11,7 +11,7 @@ dependencies = [
     "numpy~=1.26",
     "pandas~=2.2",
     "pip~=25.0",
-    "python-terrier~=0.11.0",
+    "python-terrier~=0.13.1",
     "pyterrier-dr @ git+https://github.com/terrierteam/pyterrier_dr.git@c8946e93b094e4ebc27ca3ce552fa8714f5c1c11",
     "resiliparse~=0.15.2",
     "scrapy~=2.11",
